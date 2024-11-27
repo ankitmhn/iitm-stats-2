@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Covariance and Correlation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.5.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Motivation:}
+    \begin{itemize}
+      \item Variance measures the spread of a single random variable, while covariance and correlation quantify the relationship between two random variables.
+      \item Example:
+        \begin{itemize}
+          \item Two joint PMFs can have identical marginals but very different relationships between the random variables.
+          \item Covariance and correlation help capture these relationships.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Covariance:}
+    \begin{itemize}
+      \item Definition:
+        \[
+          \text{Cov}(X, Y) = E\left[(X - E[X])(Y - E[Y])\right].
+        \]
+      \item Simplified formula:
+        \[
+          \text{Cov}(X, Y) = E[XY] - E[X]E[Y].
+        \]
+      \item Interpretation:
+        \begin{itemize}
+          \item $\text{Cov}(X, Y) > 0$: $X$ and $Y$ tend to increase together.
+          \item $\text{Cov}(X, Y) < 0$: When $X$ increases, $Y$ tends to decrease.
+          \item $\text{Cov}(X, Y) = 0$: $X$ and $Y$ are uncorrelated.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Examples of Covariance:}
+    \begin{itemize}
+      \item \textbf{Positive Covariance:}
+        \begin{itemize}
+          \item $X$: Height of a person, $Y$: Weight of a person.
+          \item Taller individuals tend to weigh more.
+        \end{itemize}
+      \item \textbf{Negative Covariance:}
+        \begin{itemize}
+          \item $X$: Rainfall during monsoon, $Y$: Farmer debt.
+          \item Higher rainfall correlates with lower farmer debt.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Correlation:}
+    \begin{itemize}
+      \item Normalized version of covariance:
+        \[
+          \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma(X)\sigma(Y)},
+        \]
+        where $\sigma(X)$ and $\sigma(Y)$ are the standard deviations of $X$ and $Y$.
+      \item Properties:
+        \begin{itemize}
+          \item $-1 \leq \rho(X, Y) \leq 1$.
+          \item $\rho(X, Y) = 1$: Perfect positive correlation.
+          \item $\rho(X, Y) = -1$: Perfect negative correlation.
+          \item $\rho(X, Y) = 0$: No linear relationship.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Properties of Covariance:}
+    \begin{enumerate}
+      \item $\text{Cov}(X, X) = \text{Var}(X)$.
+      \item $\text{Cov}(X + a, Y) = \text{Cov}(X, Y)$ (translation invariance).
+      \item $\text{Cov}(aX, bY) = ab \cdot \text{Cov}(X, Y)$ (scaling).
+      \item Symmetry:
+        \[
+          \text{Cov}(X, Y) = \text{Cov}(Y, X).
+        \]
+    \end{enumerate}
+
+  \item \textbf{Relation Between Covariance and Independence:}
+    \begin{itemize}
+      \item Independence implies $\text{Cov}(X, Y) = 0$ (uncorrelated).
+      \item However, $\text{Cov}(X, Y) = 0$ does not imply independence.
+      \item Example of dependent but uncorrelated variables:
+        \begin{itemize}
+          \item $X \in \{-1, 0, 1\}$, $Y \in \{0, 1\}$ with specific joint probabilities.
+          \item $E[XY] = E[X]E[Y]$, but $X$ and $Y$ are not independent.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Covariance:}
+Measures how two random variables move together:
+- Positive: Variables increase together.
+- Negative: One increases while the other decreases.
+
+\textbf{Correlation:}
+A normalized measure of covariance indicating the strength of a linear relationship.
+
+\textbf{Examples:}
+- Positive covariance: Height and weight.
+- Negative covariance: Rainfall and farmer debt.
+
+\textbf{Important Note:}
+Uncorrelated variables may still be dependent.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined covariance and correlation as measures of relationships between random variables.
+  \item Explored their properties and practical examples.
+  \item Highlighted the difference between independence and uncorrelation.
+\end{itemize}
+
+Covariance and correlation are foundational tools for understanding relationships in multivariable data.
+
+\end{document}

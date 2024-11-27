@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Bounds on Probabilities Using Mean and Variance}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.7.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Overview:}
+    \begin{itemize}
+      \item The lecture explores the relationship between a random variable's mean ($\mu$) and variance ($\sigma^2$) and the probabilities associated with its values.
+      \item Mean represents the "center" of a distribution, while variance measures the "spread."
+      \item Using $\mu$ and $\sigma^2$, we can establish bounds on probabilities without knowing the exact distribution.
+    \end{itemize}
+
+  \item \textbf{Standard Units:}
+    \begin{itemize}
+      \item A random variable $X$ can be expressed in terms of standard deviations from the mean:
+        \[
+          Z = \frac{X - \mu}{\sigma}.
+        \]
+      \item Standard units help assess how extreme a value of $X$ is relative to its distribution.
+      \item Example: $Z = 10$ indicates $X$ is 10 standard deviations away from $\mu$, typically an outlier.
+    \end{itemize}
+
+  \item \textbf{Markov's Inequality:}
+    \begin{itemize}
+      \item For a non-negative random variable $X$ with finite mean $\mu$:
+        \[
+          P(X \geq c) \leq \frac{\mu}{c}.
+        \]
+      \item Interpretation: The probability that $X$ exceeds $c$ is bounded by $\mu / c$.
+      \item Example: If $\mu = 100$, then $P(X \geq 200) \leq 0.5$.
+      \item Limitation: Requires $X \geq 0$.
+    \end{itemize}
+
+  \item \textbf{Chebyshev's Inequality:}
+    \begin{itemize}
+      \item Applies to any random variable with finite mean $\mu$ and variance $\sigma^2$:
+        \[
+          P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}.
+        \]
+      \item Interpretation: The probability that $X$ deviates from $\mu$ by $k\sigma$ decreases as $k$ increases.
+      \item Complementary form:
+        \[
+          P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}.
+        \]
+      \item Example: For $k = 2$, $P(|X - \mu| \geq 2\sigma) \leq 0.25$.
+    \end{itemize}
+
+  \item \textbf{Examples of Markov and Chebyshev Inequalities:}
+    \begin{itemize}
+      \item \textbf{Sum of Two Dice Rolls:}
+        \begin{itemize}
+          \item $\mu = 7$, $\sigma = 2.42$.
+          \item $P(|X - \mu| \geq 2\sigma) \leq 0.25$, but actual calculation yields $P(|X - \mu| \geq 2\sigma) = 0.056$.
+        \end{itemize}
+      \item \textbf{Uniform Distribution on $[1, 100]$:}
+        \begin{itemize}
+          \item $\mu = 50.5$, $\sigma \approx 28.9$.
+          \item $P(|X - \mu| \geq 2\sigma) = 0$, satisfying Chebyshev's bound.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Assessing significance: Evaluate whether changes (e.g., reduction in accidents) are meaningful based on standard deviation.
+      \item Bounding probabilities in practical scenarios where distributions are unknown.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Inequalities:}
+- **Markov's Inequality:** Provides a bound for non-negative variables:
+\[
+  P(X \geq c) \leq \frac{\mu}{c}.
+\]
+- **Chebyshev's Inequality:** Applies to all variables with finite variance:
+\[
+  P(|X - \mu| \geq k\sigma) \leq \frac{1}{k^2}.
+\]
+
+\textbf{Why It Matters:}
+- These bounds help estimate probabilities without requiring the exact distribution.
+
+\textbf{Example:}
+For dice rolls ($\mu = 7$, $\sigma = 2.42$):
+\[
+  P(|X - 7| \geq 2 \cdot 2.42) \leq 0.25.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Discussed bounds on probabilities using mean and variance.
+  \item Introduced Markov's and Chebyshev's inequalities.
+  \item Applied these concepts to practical examples.
+\end{itemize}
+
+These inequalities are fundamental tools in probability, providing insights into random variable behavior with minimal assumptions.
+
+\end{document}

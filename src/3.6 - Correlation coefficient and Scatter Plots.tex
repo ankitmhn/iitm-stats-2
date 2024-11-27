@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Correlation Coefficient and Scatter Plots}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.6.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Motivation:}
+    \begin{itemize}
+      \item Covariance measures the relationship between two random variables, but its magnitude depends on the scale of the variables, making it challenging to interpret.
+      \item The correlation coefficient, $\rho(X, Y)$, normalizes covariance, providing a dimensionless measure that is easier to interpret.
+    \end{itemize}
+
+  \item \textbf{Definition of Correlation Coefficient:}
+    \begin{itemize}
+      \item Formula:
+        \[
+          \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma(X)\sigma(Y)},
+        \]
+        where $\sigma(X)$ and $\sigma(Y)$ are the standard deviations of $X$ and $Y$.
+      \item Properties:
+        \begin{itemize}
+          \item $\rho(X, Y) \in [-1, 1]$.
+          \item $\rho(X, Y) = 1$: Perfect positive correlation (linear relationship where $Y = aX + b$ with $a > 0$).
+          \item $\rho(X, Y) = -1$: Perfect negative correlation (linear relationship where $Y = aX + b$ with $a < 0$).
+          \item $\rho(X, Y) = 0$: No linear relationship between $X$ and $Y$ (uncorrelated).
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Interpreting Correlation:}
+    \begin{itemize}
+      \item $\rho$ summarizes the trend between two variables:
+        \begin{itemize}
+          \item Positive values: As $X$ increases, $Y$ tends to increase.
+          \item Negative values: As $X$ increases, $Y$ tends to decrease.
+          \item Near zero: No observable trend between $X$ and $Y$.
+        \end{itemize}
+      \item If $\lvert \rho(X, Y) \rvert = 1$, $Y$ is a linear function of $X$.
+    \end{itemize}
+
+  \item \textbf{Scatter Plots for Visualizing Correlation:}
+    \begin{itemize}
+      \item A scatter plot represents paired observations $(X, Y)$ as points in a 2D space.
+      \item Patterns in the scatter plot indicate the type and strength of the correlation:
+        \begin{itemize}
+          \item Tight linear alignment: $\rho \approx \pm 1$.
+          \item Broad linear trend: Moderate correlation ($0 < \lvert \rho \rvert < 1$).
+          \item Random scatter: $\rho \approx 0$.
+        \end{itemize}
+      \item Example:
+        \begin{itemize}
+          \item Case 1: Points are widely spread, $\rho \approx 0$.
+          \item Case 2: Clear positive trend, $\rho > 0$ but not close to 1.
+          \item Case 3: Almost perfect positive correlation, $\rho \approx 1$.
+          \item Case 4: Clear negative trend, $\rho < 0$ but not close to $-1$.
+          \item Case 5: Strong negative correlation, $\rho \approx -1$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Examples of Correlation Coefficient:}
+    \begin{itemize}
+      \item Joint PMF of $X, Y$ is used to compute $\rho(X, Y)$ systematically.
+      \item Variance and covariance calculations lead to:
+        \[
+          \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sqrt{\text{Var}(X) \cdot \text{Var}(Y)}}.
+        \]
+      \item Example calculations demonstrate scenarios with positive, negative, and zero correlations.
+    \end{itemize}
+
+  \item \textbf{Applications of Scatter Plots and Correlation:}
+    \begin{itemize}
+      \item Scatter plots help identify potential relationships in large datasets, such as sports statistics (e.g., IPL cricket data).
+      \item Correlation quantifies trends for further analysis or modeling.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Correlation Coefficient ($\rho$):}
+Measures the strength and direction of a linear relationship between two variables:
+- $1$: Perfect positive correlation.
+- $-1$: Perfect negative correlation.
+- $0$: No linear correlation.
+
+\textbf{Scatter Plots:}
+Visualize paired data to detect patterns:
+- Tight alignment: Strong correlation.
+- Random scatter: Weak or no correlation.
+
+\textbf{Example:}
+For $X, Y$ with $\text{Cov}(X, Y) = -0.5$, $\sigma(X) = 1$, and $\sigma(Y) = 2$:
+\[
+  \rho(X, Y) = \frac{-0.5}{1 \cdot 2} = -0.25.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined and interpreted the correlation coefficient.
+  \item Demonstrated scatter plots as a tool for visualizing relationships.
+  \item Discussed practical applications and examples of correlation in data analysis.
+\end{itemize}
+
+Correlation is a powerful tool for summarizing trends and relationships in multivariable datasets.
+
+\end{document}

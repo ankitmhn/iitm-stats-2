@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Simulations and Applications of Expected Value}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.3.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Expected Value in Practice:}
+    \begin{itemize}
+      \item The expected value represents the average value of a random variable over a large number of trials.
+      \item Simulations are a powerful tool to observe how the expected value aligns with average outcomes in experiments.
+    \end{itemize}
+
+  \item \textbf{Casino Dice Game Simulation:}
+    \begin{itemize}
+      \item Game: A player bets on the outcome of the sum of two dice rolls being under 7, over 7, or equal to 7.
+      \item Simulated returns match closely with theoretical expected values:
+        \[
+          \text{Expected Gain} \approx \text{Simulated Average Gain}.
+        \]
+      \item Example: For specific betting strategies, simulations consistently show a negative expected gain, reflecting the casino's advantage.
+    \end{itemize}
+
+  \item \textbf{Simulating Common Distributions:}
+    \begin{itemize}
+      \item Python's \texttt{scipy.stats} library generates samples for distributions like Binomial, Geometric, and Poisson.
+      \item Simulated averages align closely with theoretical expectations:
+        \begin{itemize}
+          \item Binomial$(20, 0.3)$: $E[X] = 6$.
+          \item Geometric$(0.3)$: $E[X] = \frac{1}{0.3} \approx 3.33$.
+          \item Poisson$(\lambda)$: $E[X] = \lambda$.
+        \end{itemize}
+      \item Highlights the utility of simulations in verifying theoretical results.
+    \end{itemize}
+
+  \item \textbf{Balls and Bins Problem:}
+    \begin{itemize}
+      \item Problem: $m$ balls are thrown into $n$ bins uniformly at random. Compute the expected number of empty bins.
+      \item Theoretical result:
+        \[
+          E[\text{Empty Bins}] = n \left(1 - \frac{1}{n}\right)^m \approx n e^{-\frac{m}{n}}.
+        \]
+      \item Simulation steps:
+        \begin{enumerate}
+          \item Repeat the experiment 1000 times (Monte Carlo method).
+          \item Assign each ball to a random bin and track the count.
+          \item Calculate the average number of empty bins.
+        \end{enumerate}
+      \item Simulated results closely match theoretical values.
+    \end{itemize}
+
+  \item \textbf{Importance of Simulations:}
+    \begin{itemize}
+      \item Provides a practical way to verify theoretical concepts like expected value.
+      \item Demonstrates the law of large numbers: Simulated averages converge to expected values as sample size increases.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Simulations show that the average outcomes in repeated trials align with the expected value.
+
+\textbf{Examples:}
+- Casino game: Expected gains and simulated gains match closely, highlighting the casino's long-term profit.
+- Balls and bins: Simulated and theoretical counts of empty bins are nearly identical.
+
+\textbf{Why It Matters:}
+Simulations provide a tangible way to observe and validate probabilistic concepts.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Used Python simulations to observe the behavior of expected value.
+  \item Verified theoretical results for distributions like Binomial, Geometric, and Poisson.
+  \item Demonstrated the practical utility of expected value in games and probabilistic problems.
+\end{itemize}
+
+Simulations bridge theory and practice, making abstract concepts like expected value accessible and applicable.
+
+\end{document}

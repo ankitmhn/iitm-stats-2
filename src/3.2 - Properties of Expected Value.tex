@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Properties of Expected Value}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition Recap:}
+    \begin{itemize}
+      \item The expected value, $E[X]$, represents the weighted average of a random variable $X$.
+      \item Formula:
+        \[
+          E[X] = \sum_{t \in T_X} t \cdot P(X = t).
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Expected Value:}
+    \begin{enumerate}
+      \item \textbf{Expected Value of a Constant:}
+        \[
+          E[c] = c.
+        \]
+      \item \textbf{Non-Negativity for Non-Negative Random Variables:}
+        \[
+          E[X] \geq 0 \quad \text{if } X \geq 0.
+        \]
+      \item \textbf{Linearity of Expectation:}
+        \begin{itemize}
+          \item For any random variables $X$ and $Y$, and constants $a, b$:
+            \[
+              E[aX + bY] = aE[X] + bE[Y].
+            \]
+          \item This property holds regardless of whether $X$ and $Y$ are independent.
+        \end{itemize}
+      \item \textbf{Expectation of a Function:}
+        \begin{itemize}
+          \item For a function $g(X)$:
+            \[
+              E[g(X)] = \sum_{t \in T_X} g(t) \cdot P(X = t).
+            \]
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Applications and Examples:}
+    \begin{itemize}
+      \item \textbf{Casino Math:}
+        \begin{itemize}
+          \item A betting strategy on outcomes "under 7," "over 7," and "equal to 7" yields:
+            \[
+              E[\text{Gain}] = \frac{-2 + 3p_1}{6}.
+            \]
+          \item Result: The expected gain is negative regardless of $p_1$, illustrating how casinos structure bets to ensure long-term losses for players.
+        \end{itemize}
+
+      \item \textbf{Linearity of Expectation Example:}
+        \begin{itemize}
+          \item Sum of two dice rolls:
+            \[
+              E[X + Y] = E[X] + E[Y] = 3.5 + 3.5 = 7.
+            \]
+          \item No need to compute the joint distribution of $X$ and $Y$.
+        \end{itemize}
+
+      \item \textbf{Binomial Distribution:}
+        \begin{itemize}
+          \item For $X \sim \text{Binomial}(n, p)$:
+            \[
+              E[X] = np,
+            \]
+            derived easily using linearity by summing $n$ independent Bernoulli trials.
+        \end{itemize}
+
+      \item \textbf{Centering a Random Variable:}
+        \begin{itemize}
+          \item To create a random variable with mean 0:
+            \[
+              Y = X - E[X].
+            \]
+          \item Applications include machine learning and data normalization.
+        \end{itemize}
+
+      \item \textbf{Balls and Bins Problem:}
+        \begin{itemize}
+          \item Throw 10 balls into 3 bins. Let $X_i = 1$ if bin $i$ is empty, $0$ otherwise.
+          \item Expected number of empty bins:
+            \[
+              E[X_1 + X_2 + X_3] = E[X_1] + E[X_2] + E[X_3] = 3 \cdot \left(\frac{2}{3}\right)^{10}.
+            \]
+          \item Highlights the simplicity of expectation calculations using linearity.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Properties:}
+- $E[c] = c$ for a constant $c$.
+- $E[X] \geq 0$ if $X \geq 0$.
+- $E[aX + bY] = aE[X] + bE[Y]$ simplifies calculations, even for dependent variables.
+
+\textbf{Applications:}
+- Casino games ensure negative expected gains for players.
+- Simplified expectation computations for the sum of random variables, like dice rolls or binomial distributions.
+- Data normalization by centering a random variable: $Y = X - E[X]$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Examined key properties of expected value, including linearity.
+  \item Applied these properties to real-world problems such as games, distributions, and data normalization.
+  \item Demonstrated the power of expected value in simplifying calculations and gaining insights into probabilistic phenomena.
+\end{itemize}
+
+Expected value is an essential tool in probability, offering a balance between theoretical analysis and practical utility.
+
+\end{document}

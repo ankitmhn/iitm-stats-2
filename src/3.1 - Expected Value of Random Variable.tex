@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Expected Value}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.1.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Expected Value:}
+    \begin{itemize}
+      \item The expected value (denoted as $E[X]$) is a measure of the "average" value a random variable $X$ takes, weighted by its probabilities.
+      \item Formula:
+        \[
+          E[X] = \sum_{t \in T_X} t \cdot f_X(t),
+        \]
+        where $T_X$ is the range of $X$ and $f_X(t) = P(X = t)$ is the probability mass function (PMF).
+      \item Interpretation: Over repeated trials, the arithmetic mean of $X$ approaches $E[X]$.
+    \end{itemize}
+
+  \item \textbf{Importance of Expected Value:}
+    \begin{itemize}
+      \item Summarizes the central tendency of a random variable.
+      \item Provides insights into long-term outcomes (e.g., average gains in a casino game).
+      \item Useful in practical decision-making and theoretical analysis.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Bernoulli Random Variable:}
+        \begin{itemize}
+          \item PMF: $P(X = 1) = p$, $P(X = 0) = 1 - p$.
+          \item Expected value:
+            \[
+              E[X] = 0 \cdot (1 - p) + 1 \cdot p = p.
+            \]
+        \end{itemize}
+
+      \item \textbf{Uniform Random Variable (1 to 6):}
+        \begin{itemize}
+          \item PMF: $P(X = x) = \frac{1}{6}$ for $x \in \{1, 2, 3, 4, 5, 6\}$.
+          \item Expected value:
+            \[
+              E[X] = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = 3.5.
+            \]
+        \end{itemize}
+
+      \item \textbf{Lottery Example:}
+        \begin{itemize}
+          \item PMF: $P(X = 200) = \frac{1}{1000}$, $P(X = 20) = \frac{27}{1000}$, $P(X = 0) = \frac{972}{1000}$.
+          \item Expected value:
+            \[
+              E[X] = 200 \cdot \frac{1}{1000} + 20 \cdot \frac{27}{1000} + 0 \cdot \frac{972}{1000} = 0.56.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Properties of Expected Value:}
+    \begin{itemize}
+      \item Units of $E[X]$ match the units of $X$.
+      \item $E[X]$ may not be a value in the range of $X$.
+    \end{itemize}
+
+  \item \textbf{Advanced Examples:}
+    \begin{itemize}
+      \item \textbf{Geometric Distribution:}
+        \begin{itemize}
+          \item PMF: $P(X = k) = (1 - p)^{k-1}p$ for $k = 1, 2, \dots$.
+          \item Expected value:
+            \[
+              E[X] = \frac{1}{p}.
+            \]
+        \end{itemize}
+
+      \item \textbf{Poisson Distribution:}
+        \begin{itemize}
+          \item PMF: $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$ for $k = 0, 1, \dots$.
+          \item Expected value:
+            \[
+              E[X] = \lambda.
+            \]
+        \end{itemize}
+
+      \item \textbf{Binomial Distribution:}
+        \begin{itemize}
+          \item PMF: $P(X = k) = \binom{n}{k}p^k(1 - p)^{n-k}$ for $k = 0, 1, \dots, n$.
+          \item Expected value:
+            \[
+              E[X] = np.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Key Techniques:}
+    \begin{itemize}
+      \item Use summation formulas for uniform and geometric progressions to simplify calculations.
+      \item Understand difference equations for summation proofs.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Expected Value:}
+The "average" value of a random variable, found by summing each possible value weighted by its probability.
+
+\textbf{Examples:}
+- Bernoulli($p$): $E[X] = p$.
+- Uniform(1 to 6): $E[X] = 3.5$.
+- Geometric($p$): $E[X] = \frac{1}{p}$.
+
+\textbf{Why It Matters:}
+Expected value helps understand long-term outcomes and guides practical decisions (e.g., betting strategies).
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined expected value and its practical significance.
+  \item Demonstrated calculations for common distributions.
+  \item Highlighted techniques for simplifying summations.
+\end{itemize}
+
+Expected value bridges probability and real-world applications, providing insights into the central tendency of random variables.
+
+\end{document}

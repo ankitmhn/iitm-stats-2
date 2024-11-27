@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Variance and Its Properties}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 3.4.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Motivation for Variance:}
+    \begin{itemize}
+      \item Expected value provides a central measure but doesn't capture the spread of a random variable.
+      \item Example:
+        \begin{itemize}
+          \item $X = 10$ (constant), $Y \in \{9, 11\}$ (equal probabilities), $Z \in \{0, 20\}$ (equal probabilities).
+          \item $E[X] = E[Y] = E[Z] = 10$, but their spreads differ.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Definition of Variance:}
+    \begin{itemize}
+      \item Variance measures the spread of a random variable around its mean:
+        \[
+          \text{Var}(X) = E[(X - E[X])^2].
+        \]
+      \item Standard deviation:
+        \[
+          \sigma(X) = \sqrt{\text{Var}(X)}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties of Variance:}
+    \begin{enumerate}
+      \item \textbf{Non-Negativity:}
+        \[
+          \text{Var}(X) \geq 0.
+        \]
+      \item \textbf{Scaling:}
+        \[
+          \text{Var}(aX) = a^2 \text{Var}(X).
+        \]
+      \item \textbf{Translation:}
+        \[
+          \text{Var}(X + c) = \text{Var}(X).
+        \]
+      \item \textbf{Variance of the Sum (Independence):}
+        \[
+          \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y), \quad \text{if } X \text{ and } Y \text{ are independent.}
+        \]
+    \end{enumerate}
+
+  \item \textbf{Alternative Formula for Variance:}
+    \begin{itemize}
+      \item Variance can also be computed as:
+        \[
+          \text{Var}(X) = E[X^2] - (E[X])^2.
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Die Roll:}
+        \begin{itemize}
+          \item $X \sim \text{Uniform}\{1, 2, 3, 4, 5, 6\}$.
+          \item $E[X] = 3.5$, $\text{Var}(X) = \frac{35}{12}$, $\sigma(X) \approx 1.7078$.
+        \end{itemize}
+
+      \item \textbf{Bernoulli Random Variable:}
+        \begin{itemize}
+          \item $X \sim \text{Bernoulli}(p)$.
+          \item $E[X] = p$, $\text{Var}(X) = p(1 - p)$.
+        \end{itemize}
+
+      \item \textbf{Binomial Random Variable:}
+        \begin{itemize}
+          \item $X \sim \text{Binomial}(n, p)$.
+          \item $E[X] = np$, $\text{Var}(X) = np(1 - p)$.
+        \end{itemize}
+
+      \item \textbf{Poisson Random Variable:}
+        \begin{itemize}
+          \item $X \sim \text{Poisson}(\lambda)$.
+          \item $E[X] = \lambda$, $\text{Var}(X) = \lambda$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Standardization of Random Variables:}
+    \begin{itemize}
+      \item A random variable $X$ can be standardized as:
+        \[
+          Y = \frac{X - E[X]}{\sigma(X)},
+        \]
+        making $E[Y] = 0$ and $\text{Var}(Y) = 1$.
+    \end{itemize}
+
+  \item \textbf{Existence of Variance:}
+    \begin{itemize}
+      \item Variance and expected value may not always exist for certain random variables.
+      \item Example: $X = 2^n$ with $P(X = 2^n) = 2^{-n-1}$ leads to divergence of $E[X]$.
+      \item Practical cases typically involve well-behaved random variables with finite mean and variance.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Variance:}
+Variance measures how spread out a random variable's values are around the mean.
+Formula:
+\[
+  \text{Var}(X) = E[(X - E[X])^2].
+\]
+
+\textbf{Key Properties:}
+- Scaling: $\text{Var}(aX) = a^2 \text{Var}(X)$.
+- Translation doesn't change variance: $\text{Var}(X + c) = \text{Var}(X)$.
+- Variance of independent sums: $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$.
+
+\textbf{Examples:}
+- Die roll: $\text{Var}(X) = \frac{35}{12} \approx 2.916$.
+- Poisson random variable: $\text{Var}(X) = \lambda$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined variance and its significance in measuring spread.
+  \item Derived key properties and an alternative formula for variance.
+  \item Standardized random variables for easier comparison.
+  \item Highlighted rare cases where variance may not exist.
+\end{itemize}
+
+Variance complements expected value by providing a deeper understanding of a random variable's behavior.
+
+\end{document}
