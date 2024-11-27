@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Events and Their Role in Probability Theory}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 02.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of an Event:}
+    \begin{itemize}
+      \item An event is defined as a subset of the sample space $S$, which represents all possible outcomes of an experiment.
+      \item While this definition is widely used, certain advanced cases may impose restrictions on which subsets qualify as events. These technicalities are typically ignored in practical problem-solving.
+      \item Analogy: Similar to how Newtonian mechanics works well for most cases but requires corrections in extreme conditions (e.g., relativity), the basic event definition is sufficient for most practical applications.
+    \end{itemize}
+
+  \item \textbf{Examples of Events:}
+    \begin{itemize}
+      \item \textbf{Coin Toss:}
+        \begin{itemize}
+          \item Sample Space: $S = \{\text{Heads}, \text{Tails}\}$.
+          \item Possible Events:
+            \begin{itemize}
+              \item $\emptyset$ (no outcome occurred).
+              \item $\{\text{Heads}\}$.
+              \item $\{\text{Tails}\}$.
+              \item $\{\text{Heads}, \text{Tails}\}$ (entire sample space).
+            \end{itemize}
+        \end{itemize}
+
+      \item \textbf{Die Roll:}
+        \begin{itemize}
+          \item Sample Space: $S = \{1, 2, 3, 4, 5, 6\}$.
+          \item Possible Events:
+            \begin{itemize}
+              \item Single outcomes: $\{1\}, \{2\}, \dots, \{6\}$.
+              \item Combinations of outcomes: $\{2, 4, 6\}$ (even numbers), $\{3, 6\}$ (multiples of 3), etc.
+              \item Total subsets: $2^6 = 64$.
+            \end{itemize}
+        \end{itemize}
+
+      \item \textbf{Fishing Example:}
+        \begin{itemize}
+          \item Experiment: A fisherman catches fish.
+          \item Sample Space: All possible catches (e.g., types of fish, quantities).
+          \item Example Events:
+            \begin{itemize}
+              \item Catching more than 100 kg of fish.
+              \item Catching specific types of fish (e.g., Seer fish).
+              \item Events may not require explicit enumeration of the entire sample space.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Interpreting Events:}
+    \begin{itemize}
+      \item An event occurs if the actual outcome of an experiment belongs to the event subset.
+      \item Example: In a die roll, the event $\{2, 4, 6\}$ occurs if the outcome is 2, 4, or 6.
+    \end{itemize}
+
+  \item \textbf{Set Operations on Events:}
+    \begin{itemize}
+      \item Events are subsets of the sample space, and all set operations apply:
+        \begin{itemize}
+          \item \textbf{Union:} The event $A \cup B$ occurs if either $A$ or $B$ (or both) occur.
+          \item \textbf{Intersection:} The event $A \cap B$ occurs if both $A$ and $B$ occur.
+          \item \textbf{Complement:} The event $A^c$ occurs if $A$ does not occur.
+          \item \textbf{Containment:} $A \subseteq B$ if every outcome in $A$ is also in $B$.
+        \end{itemize}
+      \item These operations often have physical interpretations in terms of experiments.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Is an Event?}
+An event is a subset of possible outcomes from an experiment, and it represents situations of interest.
+
+\textbf{Examples:}
+- Coin toss: Event $\{\text{Heads}\}$ occurs if the coin lands on heads.
+- Die roll: Event $\{2, 4, 6\}$ (even numbers) occurs if the outcome is 2, 4, or 6.
+
+\textbf{Set Operations:}
+Events are sets, so operations like union, intersection, and complement apply, with meaningful interpretations in probability.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined events and explained their role in probability theory.
+  \item Used examples to clarify the concept of events and their occurrence.
+  \item Highlighted the importance of set operations in understanding events.
+\end{itemize}
+
+Events are fundamental to probability theory and essential for studying the likelihood of outcomes.
+
+\end{document}

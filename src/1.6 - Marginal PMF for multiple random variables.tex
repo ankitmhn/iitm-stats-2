@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Marginal PMF for Multiple Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.6.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Marginal PMF:}
+    \begin{itemize}
+      \item The marginal PMF of a random variable $X_1$ in a set of $n$ random variables $X_1, X_2, \dots, X_n$ is given by summing the joint PMF over all other variables:
+        \[
+          f_{X_1}(t) = \sum_{t_2, t_3, \dots, t_n} f_{X_1, X_2, \dots, X_n}(t, t_2, t_3, \dots, t_n).
+        \]
+      \item Marginalization simplifies complex joint distributions by focusing on individual variables.
+    \end{itemize}
+
+  \item \textbf{Key Principle:}
+    \begin{itemize}
+      \item To marginalize, keep the variable of interest and sum over the ranges of all other variables.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Three Coin Tosses:}
+        \begin{itemize}
+          \item Experiment: Toss a fair coin three times. Define $X_1, X_2, X_3$ as indicators for heads in each toss.
+          \item Joint PMF: $f_{X_1, X_2, X_3}(t_1, t_2, t_3) = \frac{1}{8}$ for all $(t_1, t_2, t_3)$.
+          \item Marginal PMF of $X_1$:
+            \[
+              f_{X_1}(0) = \sum_{t_2, t_3} f_{X_1, X_2, X_3}(0, t_2, t_3) = \frac{1}{2}, \quad f_{X_1}(1) = \frac{1}{2}.
+            \]
+        \end{itemize}
+      \item \textbf{Three-Digit Lottery Numbers:}
+        \begin{itemize}
+          \item Experiment: Generate a three-digit number.
+          \item Variables:
+            \begin{itemize}
+              \item $X$: First digit (hundreds place).
+              \item $Y$: Modulo 2 (even/odd).
+              \item $Z$: Last digit (units place).
+            \end{itemize}
+          \item Marginal PMFs:
+            \[
+              f_X(x) = \frac{1}{10}, \; x \in \{0, 1, \dots, 9\}, \quad f_Y(y) = \frac{1}{2}, \; y \in \{0, 1\}.
+            \]
+        \end{itemize}
+      \item \textbf{IPL Powerplay Overs:}
+        \begin{itemize}
+          \item Experiment: Runs scored in six deliveries of the first over.
+          \item Random variables: $X_1, X_2, \dots, X_6$.
+          \item Marginal PMF for $X_1$ (runs on the first ball):
+            \[
+              f_{X_1}(0) = \frac{957}{1598}, \; f_{X_1}(1) = \frac{429}{1598}, \; f_{X_1}(4) = \frac{138}{1598}, \; \text{and so on.}
+            \]
+          \item Marginalization provides meaningful insights even when the joint PMF is too complex to compute.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Pairwise Marginalization:}
+    \begin{itemize}
+      \item The joint PMF of two variables, $X_1$ and $X_2$, is computed by summing over all other variables:
+        \[
+          f_{X_1, X_2}(t_1, t_2) = \sum_{t_3, \dots, t_n} f_{X_1, X_2, \dots, X_n}(t_1, t_2, t_3, \dots, t_n).
+        \]
+    \end{itemize}
+
+  \item \textbf{General Formula for Marginal PMFs:}
+    \begin{itemize}
+      \item For a subset of variables $X_{i_1}, X_{i_2}, \dots, X_{i_k}$:
+        \[
+          f_{X_{i_1}, X_{i_2}, \dots, X_{i_k}}(t_{i_1}, t_{i_2}, \dots, t_{i_k}) = \sum_{\text{all other variables}} f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n).
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Marginal PMFs:}
+These focus on individual random variables or subsets by summing over the ranges of other variables.
+
+\textbf{Examples:}
+- Coin tosses: $f_{X_1}(0) = f_{X_1}(1) = \frac{1}{2}$.
+- IPL runs: Marginal PMFs are derived directly from data proportions.
+
+\textbf{Why Use Marginals?}
+They simplify analysis by reducing the complexity of joint distributions.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined marginal PMFs for multiple random variables.
+  \item Explored examples from coin tosses, lottery numbers, and IPL cricket.
+  \item Discussed practical use cases for marginalization in large datasets.
+\end{itemize}
+
+Marginal PMFs are essential tools for probabilistic analysis and simplifying complex distributions.
+
+\end{document}

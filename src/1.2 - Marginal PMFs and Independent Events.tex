@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Marginal PMFs and Independence of Events}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Marginal PMF Definition:}
+    \begin{itemize}
+      \item For random variables $X$ and $Y$ with a joint PMF $f_{XY}(x, y)$:
+        \[
+          f_X(x) = \sum_{y} f_{XY}(x, y), \quad f_Y(y) = \sum_{x} f_{XY}(x, y).
+        \]
+      \item Marginal PMFs represent the probabilities of individual random variables, extracted from the joint PMF.
+    \end{itemize}
+
+  \item \textbf{Marginalization Process:}
+    \begin{itemize}
+      \item Sum over rows of the joint PMF table to get $f_X(x)$.
+      \item Sum over columns of the joint PMF table to get $f_Y(y)$.
+      \item Marginal PMFs are unique for a given joint PMF.
+    \end{itemize}
+
+  \item \textbf{Examples of Marginalization:}
+    \begin{itemize}
+      \item \textbf{Coin Toss:}
+        \begin{itemize}
+          \item Joint PMF table for two tosses has $P(X = x, Y = y) = 1/4$ for all $x, y$.
+          \item Marginal PMFs:
+            \[
+              f_X(x) = \sum_{y} f_{XY}(x, y) = 1/2, \quad f_Y(y) = \sum_{x} f_{XY}(x, y) = 1/2.
+            \]
+        \end{itemize}
+      \item \textbf{Two-Digit Lottery:}
+        \begin{itemize}
+          \item Random variables $X$ (units digit) and $Y$ (remainder modulo 4).
+          \item Joint PMF table can be marginalized to obtain $f_X(x)$ and $f_Y(y)$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Non-Uniqueness of Joint PMFs:}
+    \begin{itemize}
+      \item Different joint PMFs can produce the same marginal PMFs.
+      \item Example: A joint PMF table with uniform values can produce the same marginal PMFs as one with non-uniform entries.
+    \end{itemize}
+
+  \item \textbf{Independence of Events:}
+    \begin{itemize}
+      \item Random variables $X$ and $Y$ are independent if:
+        \[
+          P(X = x \text{ and } Y = y) = P(X = x) \cdot P(Y = y) \quad \forall x, y.
+        \]
+      \item Independence is determined using the joint and marginal PMFs.
+      \item Example:
+        \begin{itemize}
+          \item Joint PMF: $f_{XY}(0, 0) = 1/20$.
+          \item Marginals: $P(X = 0) = 1/10$, $P(Y = 0) = 1/5$.
+          \item Check:
+            \[
+              P(X = 0 \text{ and } Y = 0) \neq P(X = 0) \cdot P(Y = 0).
+            \]
+            Hence, $X$ and $Y$ are not independent.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Marginal PMFs:}
+Marginal PMFs give probabilities for individual random variables and are derived by summing rows or columns of a joint PMF.
+
+\textbf{Independence:}
+Two random variables are independent if their joint probability equals the product of their individual probabilities.
+
+\textbf{Example:}
+If $f_{XY}(0, 0) \neq f_X(0) \cdot f_Y(0)$, then $X$ and $Y$ are not independent.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined marginal PMFs and explained how to compute them.
+  \item Discussed the non-uniqueness of joint PMFs.
+  \item Highlighted the criteria for independence using examples.
+\end{itemize}
+
+Marginal PMFs and independence are foundational tools for analyzing relationships between random variables.
+
+\end{document}

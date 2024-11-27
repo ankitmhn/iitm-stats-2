@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Multiple Random Variables and Joint PMFs}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.1.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Transition to Multiple Random Variables:}
+    \begin{itemize}
+      \item Random variables simplify probability spaces by mapping complex outcomes to numerical values.
+      \item Multiple random variables often arise in experiments with interconnected outcomes, requiring tools to analyze their relationships.
+    \end{itemize}
+
+  \item \textbf{Examples of Multiple Random Variables:}
+    \begin{itemize}
+      \item \textbf{Coin Toss Experiment:}
+        \begin{itemize}
+          \item Toss a fair coin three times, defining random variables $X_1$, $X_2$, and $X_3$ to indicate whether the first, second, and third tosses are heads.
+          \item These are indicator random variables, taking values 1 for heads and 0 for tails.
+          \item Events based on $X_1$ (e.g., $X_1 = 1$) are independent of events based on $X_2$ or $X_3$.
+        \end{itemize}
+      \item \textbf{Two-Digit Lottery:}
+        \begin{itemize}
+          \item Random variable $X$: Units digit of the number.
+          \item Random variable $Y$: Remainder when the number is divided by 4.
+          \item $X$ and $Y$ are uniformly distributed over their respective ranges, but they are not independent.
+          \item Example: If $X = 1$, $Y = 0$ is impossible because numbers ending in 1 are not multiples of 4.
+        \end{itemize}
+      \item \textbf{IPL Powerplay Data:}
+        \begin{itemize}
+          \item Random variable $X$: Total runs scored in an over.
+          \item Random variable $Y$: Number of wickets lost in the over.
+          \item A relationship exists: Overs with more wickets typically have fewer runs.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Modeling Multiple Random Variables:}
+    \begin{itemize}
+      \item Relationships between random variables help model complex experiments (e.g., IPL data).
+      \item Dependencies are modeled probabilistically rather than deterministically.
+    \end{itemize}
+
+  \item \textbf{Joint PMFs (Probability Mass Functions):}
+    \begin{itemize}
+      \item For discrete random variables $X$ and $Y$ defined on the same probability space:
+        \[
+          f_{XY}(t_1, t_2) = P(X = t_1 \text{ and } Y = t_2).
+        \]
+      \item Properties:
+        \begin{itemize}
+          \item $f_{XY}(t_1, t_2) \geq 0$ for all $t_1, t_2$.
+          \item $\sum_{t_1, t_2} f_{XY}(t_1, t_2) = 1$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Examples of Joint PMFs:}
+    \begin{itemize}
+      \item \textbf{Coin Toss:}
+        \begin{itemize}
+          \item $X_1$: First toss indicator, $X_2$: Second toss indicator.
+          \item Joint PMF: $f_{X_1X_2}(t_1, t_2) = P(X_1 = t_1 \text{ and } X_2 = t_2) = (1/2) \cdot (1/2) = 1/4$ for independent tosses.
+        \end{itemize}
+      \item \textbf{Two-Digit Lottery:}
+        \begin{itemize}
+          \item $X$: Units digit, $Y$: Remainder modulo 4.
+          \item Example: $f_{XY}(0, 0) = P(X = 0 \text{ and } Y = 0)$ includes numbers like 00, 20, 40, ..., totaling 5 outcomes: $5/100 = 1/20$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Properties of Joint PMFs:}
+    \begin{itemize}
+      \item All probabilities in the PMF lie between 0 and 1.
+      \item The sum of all probabilities in the PMF equals 1, covering all possible outcomes.
+      \item PMFs can be represented as tables or matrices for easier interpretation and computation.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Multiple Random Variables:}
+These arise when experiments have interconnected outcomes. Examples include:
+- Coin tosses (independent variables).
+- Two-digit lottery numbers (dependent variables).
+- IPL data (complex dependencies).
+
+\textbf{Joint PMFs:}
+Functions that assign probabilities to pairs of values taken by two random variables, satisfying:
+\[
+  f_{XY}(t_1, t_2) \geq 0, \quad \sum f_{XY}(t_1, t_2) = 1.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored multiple random variables and their applications.
+  \item Defined joint PMFs and derived examples.
+  \item Discussed how dependencies between variables help model real-world scenarios.
+\end{itemize}
+
+Joint PMFs are crucial for analyzing and modeling relationships between random variables in complex experiments.
+
+\end{document}

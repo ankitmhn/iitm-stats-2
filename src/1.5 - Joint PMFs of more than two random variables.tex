@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Joint PMFs for More Than Two Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.5.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Multi-Variable Joint PMFs:}
+    \begin{itemize}
+      \item Extending joint PMFs to more than two random variables is conceptually straightforward.
+      \item For discrete random variables $X_1, X_2, \dots, X_n$, the joint PMF is defined as:
+        \[
+          f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n) = P(X_1 = t_1, X_2 = t_2, \dots, X_n = t_n).
+        \]
+      \item It is a function mapping the Cartesian product of the ranges of $X_1, X_2, \dots, X_n$ to probabilities.
+    \end{itemize}
+
+  \item \textbf{Example 1: Coin Tosses:}
+    \begin{itemize}
+      \item Experiment: Tossing a fair coin three times, defining random variables $X_1, X_2, X_3$ to represent outcomes of each toss.
+      \item Possible outcomes: $\{000, 001, 010, 011, 100, 101, 110, 111\}$ (binary representation).
+      \item Joint PMF:
+        \[
+          f_{X_1, X_2, X_3}(t_1, t_2, t_3) = \frac{1}{8}, \quad \text{for all } (t_1, t_2, t_3).
+        \]
+      \item Uniform distribution across all outcomes.
+    \end{itemize}
+
+  \item \textbf{Example 2: Three-Digit Random Numbers:}
+    \begin{itemize}
+      \item Experiment: Randomly generate a three-digit number (000 to 999).
+      \item Define random variables:
+        \begin{itemize}
+          \item $X_1$: First digit (hundreds place).
+          \item $X_2$: Last digit (units place).
+          \item $X_3$: Modulo 2 of the number (even or odd).
+        \end{itemize}
+      \item Example joint PMF:
+        \begin{itemize}
+          \item $f_{X_1, X_2, X_3}(0, 0, 0) = \frac{10}{1000} = \frac{1}{100}$ (10 possibilities: numbers like 000, 020, etc.).
+          \item $f_{X_1, X_2, X_3}(1, 1, 1) = \frac{1}{100}$ (numbers like 111, 131, etc.).
+        \end{itemize}
+      \item Some combinations may have zero probability (e.g., $X_3 = 0$ and $X_2 = 1$ is impossible).
+    \end{itemize}
+
+  \item \textbf{Example 3: Powerplay Overs in IPL Cricket:}
+    \begin{itemize}
+      \item Experiment: Analyze runs scored in six deliveries of a powerplay over.
+      \item Random variables: $X_1, X_2, \dots, X_6$, representing runs scored on each ball.
+      \item Range: $\{0, 1, 2, 3, 4, 5, 6, 7, 8\}$ for each $X_i$ (7 for no-ball with six hit, 8 for rare cases like overthrows).
+      \item Joint PMF:
+        \[
+          f_{X_1, X_2, \dots, X_6}(t_1, t_2, \dots, t_6),
+        \]
+        represents probabilities for sequences like $(0, 1, 4, 2, 0, 0)$.
+      \item Complexity: With $9^6 = 531441$ possibilities, writing down the entire PMF is impractical.
+    \end{itemize}
+
+  \item \textbf{Challenges and Practical Considerations:}
+    \begin{itemize}
+      \item As the number of variables increases, enumerating all joint probabilities becomes infeasible.
+      \item In modern data problems, joint PMFs are often too vast to define explicitly.
+      \item Marginalization and conditional PMFs are practical tools for analyzing complex scenarios.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Are Multi-Variable Joint PMFs?}
+They extend joint PMFs to more than two random variables, defining probabilities for all combinations of outcomes.
+
+\textbf{Examples:}
+1. Coin tosses: Uniform probabilities across all combinations.
+2. IPL powerplay: Joint probabilities for runs scored on each ball are complex and computationally intensive.
+
+\textbf{Why Use Marginals and Conditionals?}
+For high-dimensional scenarios, joint PMFs are unwieldy. Marginalization and conditioning simplify analysis by focusing on subsets of variables.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined joint PMFs for more than two random variables.
+  \item Explored examples ranging from simple (coin tosses) to complex (IPL cricket).
+  \item Highlighted challenges and the importance of using marginal and conditional distributions for practical analysis.
+\end{itemize}
+
+These tools are critical for tackling real-world problems involving multiple random variables.
+
+\end{document}

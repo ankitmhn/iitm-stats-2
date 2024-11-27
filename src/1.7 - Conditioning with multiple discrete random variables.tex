@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Conditioning with Multiple Discrete Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.7.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Relationship Between Marginals, Conditionals, and Joint PMFs:}
+    \begin{itemize}
+      \item Marginalization reduces complexity by focusing on smaller subsets of variables.
+      \item Conditional PMFs bridge marginals and the joint PMF, enabling detailed analysis.
+      \item Key formula:
+        \[
+          f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n) = f_{X_1}(t_1) \prod_{i=2}^n f_{X_i \mid X_1, \dots, X_{i-1}}(t_i \mid t_1, \dots, t_{i-1}).
+        \]
+    \end{itemize}
+
+  \item \textbf{Basic Conditioning:}
+    \begin{itemize}
+      \item For two variables $X_1$ and $X_2$:
+        \[
+          f_{X_1 \mid X_2}(t_1 \mid t_2) = \frac{f_{X_1, X_2}(t_1, t_2)}{f_{X_2}(t_2)}.
+        \]
+      \item This formula generalizes to multiple variables:
+        \[
+          f_{X_1, X_2 \mid X_3}(t_1, t_2 \mid t_3) = \frac{f_{X_1, X_2, X_3}(t_1, t_2, t_3)}{f_{X_3}(t_3)}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples of Conditioning:}
+    \begin{itemize}
+      \item \textbf{Example 1: Pairwise Conditioning:}
+        \begin{itemize}
+          \item $X_1 \mid X_2 = t_2$: Conditional PMF is derived as:
+            \[
+              f_{X_1 \mid X_2}(t_1 \mid t_2) = \frac{f_{X_1, X_2}(t_1, t_2)}{f_{X_2}(t_2)}.
+            \]
+        \end{itemize}
+      \item \textbf{Example 2: Conditional on Multiple Variables:}
+        \begin{itemize}
+          \item For $X_1 \mid (X_2 = t_2, X_3 = t_3)$:
+            \[
+              f_{X_1 \mid X_2, X_3}(t_1 \mid t_2, t_3) = \frac{f_{X_1, X_2, X_3}(t_1, t_2, t_3)}{f_{X_2, X_3}(t_2, t_3)}.
+            \]
+        \end{itemize}
+      \item \textbf{Example 3: Joint Conditional PMF:}
+        \[
+          f_{X_1, X_3 \mid X_2, X_4}(t_1, t_3 \mid t_2, t_4) = \frac{f_{X_1, X_2, X_3, X_4}(t_1, t_2, t_3, t_4)}{f_{X_2, X_4}(t_2, t_4)}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Factoring the Joint PMF:}
+    \begin{itemize}
+      \item Any joint PMF can be factored iteratively:
+        \[
+          f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n) = f_{X_n}(t_n) \prod_{i=1}^{n-1} f_{X_i \mid X_{i+1}, \dots, X_n}(t_i \mid t_{i+1}, \dots, t_n).
+        \]
+      \item This flexibility allows reordering variables, e.g., $f_{X_3 \mid X_1, X_2}$ or $f_{X_1 \mid X_2, X_3}$.
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Conditioning simplifies computations in high-dimensional problems.
+      \item Factorization helps analyze dependencies and decompose complex distributions.
+      \item Practical examples include evaluating conditional probabilities in tabular data.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Conditioning and Marginalization:}
+Conditioning relates individual and joint distributions, while marginalization reduces variables.
+
+\textbf{Factoring:}
+Break down a joint PMF into products of marginals and conditionals, simplifying analysis.
+
+\textbf{Example:}
+For $f_{X_1, X_2, X_3}(t_1, t_2, t_3)$:
+\[
+  f_{X_1, X_2, X_3}(t_1, t_2, t_3) = f_{X_1}(t_1) \cdot f_{X_2 \mid X_1}(t_2 \mid t_1) \cdot f_{X_3 \mid X_1, X_2}(t_3 \mid t_1, t_2).
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined conditional PMFs for multiple random variables.
+  \item Demonstrated the utility of factoring joint PMFs into simpler components.
+  \item Highlighted the flexibility of variable ordering in factorization.
+\end{itemize}
+
+These principles are foundational for probabilistic analysis in high-dimensional spaces.
+
+\end{document}

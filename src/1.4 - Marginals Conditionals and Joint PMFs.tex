@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Marginals, Conditionals, and Joint PMFs}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.4.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Overview of Marginals, Conditionals, and Joint PMFs:}
+    \begin{itemize}
+      \item Previously, we derived joint PMFs from marginals and conditionals.
+      \item In practice, marginals and conditionals are often provided, and the joint PMF is derived from them using the factorization rule:
+        \[
+          f_{XY}(t_1, t_2) = f_X(t_1) \cdot f_{Y \mid X}(t_2 \mid t_1).
+        \]
+    \end{itemize}
+
+  \item \textbf{Example 1: Dice Roll and Coin Toss:}
+    \begin{itemize}
+      \item Experiment: Roll a die ($X$) and toss a coin $X$ times. Define $Y$ as the number of heads obtained.
+      \item \textbf{Marginal PMF:} $f_X(x) = \frac{1}{6}, \; x \in \{1, 2, 3, 4, 5, 6\}$.
+      \item \textbf{Conditional PMF:} Given $X = x$, $Y \sim \text{Binomial}(x, \frac{1}{2})$:
+        \[
+          f_{Y \mid X}(y \mid x) = \binom{x}{y} \left(\frac{1}{2}\right)^y \left(\frac{1}{2}\right)^{x-y}, \; y \in \{0, 1, \dots, x\}.
+        \]
+      \item \textbf{Joint PMF:}
+        \[
+          f_{XY}(x, y) = f_X(x) \cdot f_{Y \mid X}(y \mid x) = \frac{1}{6} \cdot \binom{x}{y} \left(\frac{1}{2}\right)^x, \; y \in \{0, 1, \dots, x\}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Example 2: Poisson Process and Coin Toss:}
+    \begin{itemize}
+      \item Experiment: Generate a Poisson random variable $X \sim \text{Poisson}(\lambda)$. Toss a coin $X$ times, and define $Y$ as the number of heads.
+      \item \textbf{Marginal PMF:} $f_X(x) = \frac{\lambda^x e^{-\lambda}}{x!}, \; x \in \{0, 1, 2, \dots\}$.
+      \item \textbf{Conditional PMF:} Given $X = x$, $Y \sim \text{Binomial}(x, \frac{1}{2})$:
+        \[
+          f_{Y \mid X}(y \mid x) = \binom{x}{y} \left(\frac{1}{2}\right)^y \left(\frac{1}{2}\right)^{x-y}.
+        \]
+      \item \textbf{Joint PMF:}
+        \[
+          f_{XY}(x, y) = f_X(x) \cdot f_{Y \mid X}(y \mid x) = \frac{\lambda^x e^{-\lambda}}{x!} \cdot \binom{x}{y} \left(\frac{1}{2}\right)^x.
+        \]
+      \item \textbf{Marginalization:}
+        \[
+          f_Y(y) = \sum_{x=y}^\infty f_{XY}(x, y).
+        \]
+        This simplifies to:
+        \[
+          f_Y(y) = \frac{(\lambda / 2)^y e^{-\lambda}}{y!}, \; y \in \{0, 1, 2, \dots\}.
+        \]
+        Hence, $Y \sim \text{Poisson}(\lambda / 2)$.
+    \end{itemize}
+
+  \item \textbf{Example 3: IPL Powerplay Runs and Wickets:}
+    \begin{itemize}
+      \item Define $X$ as the number of wickets in an over and $Y$ as the runs scored.
+      \item \textbf{Marginal PMF of $X$:}
+        \[
+          f_X(x) =
+          \begin{cases}
+            0.6 & x = 0, \\
+            0.3 & x = 1, \\
+            0.1 & x = 2.
+          \end{cases}
+        \]
+      \item \textbf{Conditional PMF of $Y \mid X$:}
+        \begin{itemize}
+          \item For $x = 0$: $Y \sim \text{Uniform}(0, 12)$.
+          \item For $x = 1$: $Y$ follows a different distribution with lower means.
+          \item For $x = 2$: $Y$ is further skewed toward smaller values.
+        \end{itemize}
+      \item \textbf{Joint PMF:}
+        \[
+          f_{XY}(x, y) = f_X(x) \cdot f_{Y \mid X}(y \mid x).
+        \]
+      \item \textbf{Marginalization:}
+        \[
+          f_Y(y) = \sum_{x} f_{XY}(x, y).
+        \]
+        A graphical representation (e.g., a stem plot) helps visualize $f_Y(y)$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Start with marginals and conditionals, then derive joint PMFs. Marginalize joint PMFs to find distributions of individual variables.
+
+\textbf{Example: Poisson and Coin Toss}
+- $X \sim \text{Poisson}(\lambda)$, $Y$ is number of heads.
+- Result: $Y \sim \text{Poisson}(\lambda / 2)$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored deriving joint PMFs from marginal and conditional PMFs.
+  \item Analyzed real-world examples, including IPL data and Poisson processes.
+  \item Highlighted the practical and theoretical applications of these distributions.
+\end{itemize}
+
+This process is foundational for probabilistic modeling and inference.
+
+\end{document}

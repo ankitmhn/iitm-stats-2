@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: IPL Data and Its Use in Statistics}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Week 11 Lec 04.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to IPL Data:}
+    \begin{itemize}
+      \item The Indian Premier League (IPL) is a T20 cricket league started in 2008, featuring city-based teams with domestic and international players.
+      \item Data from over 800 matches (2008-2020) is publicly available and contains detailed information about each match.
+    \end{itemize}
+
+  \item \textbf{Types of Data Available:}
+    \begin{itemize}
+      \item Match details: Venue, teams, toss results, winner, and player of the match.
+      \item Ball-by-ball data: Includes information for every delivery, such as:
+        \begin{itemize}
+          \item Batsman and bowler.
+          \item Runs scored, extras, and dismissals.
+          \item Non-striker and fielding details.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Nature of the Data:}
+    \begin{itemize}
+      \item Cricket outcomes are inherently random and unpredictable, but patterns can be identified through statistical analysis.
+      \item Examples of insights:
+        \begin{itemize}
+          \item Typical first-innings scores.
+          \item Score variations by venue or team.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Data Sources:}
+    \begin{itemize}
+      \item Websites like \texttt{cricsheet.org} provide detailed IPL data in YAML format.
+      \item YAML is a human-readable text format but requires preprocessing to enable statistical analysis.
+    \end{itemize}
+
+  \item \textbf{Challenges in Data Handling:}
+    \begin{itemize}
+      \item Raw data formats (e.g., YAML) are not suitable for direct analysis.
+      \item Conversion to accessible formats like spreadsheets is essential.
+      \item Example workflow:
+        \begin{enumerate}
+          \item Download YAML files containing match data.
+          \item Parse the files and extract relevant details.
+          \item Compile the data into a structured format like a spreadsheet or database.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Activity for Students:}
+    \begin{itemize}
+      \item Write a Python script to process YAML files into a spreadsheet.
+      \item Suggested tools:
+        \begin{itemize}
+          \item \texttt{os} module for file handling.
+          \item \texttt{yaml} module for parsing.
+          \item \texttt{pandas} for data manipulation.
+        \end{itemize}
+      \item Use Python data structures like lists and dictionaries to organize data.
+      \item Add this activity to your portfolio for showcasing data handling skills.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Is the IPL Data About?}
+It captures detailed information about cricket matches, including ball-by-ball events and match summaries.
+
+\textbf{Why Use It in Statistics?}
+Cricket matches exhibit randomness but reveal patterns that can be studied statistically, such as typical scores or player performance trends.
+
+\textbf{What to Do with the Data?}
+Convert the raw YAML format into a spreadsheet for easier analysis, then use descriptive statistics to identify patterns.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced IPL match data and its use in statistical analysis.
+  \item Discussed the challenges of handling raw data and converting it into structured formats.
+  \item Proposed a Python-based activity for preprocessing and analyzing the data.
+\end{itemize}
+
+This example demonstrates the real-world applications of statistics and data science in sports analytics.
+
+\end{document}

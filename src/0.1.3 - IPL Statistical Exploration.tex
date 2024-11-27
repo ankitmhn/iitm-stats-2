@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: IPL Powerplay Overs and Statistical Exploration}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Week 11 Lec 03.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Focus on IPL Powerplay Overs:}
+    \begin{itemize}
+      \item The IPL powerplay covers the first six overs of each innings, characterized by field restrictions allowing only two players outside the inner circle.
+      \item These overs are marked by high scoring potential and relatively consistent initial conditions across teams, making them suitable for statistical study.
+    \end{itemize}
+
+  \item \textbf{Data Collection:}
+    \begin{itemize}
+      \item Data from 1600 innings was extracted, capturing details like venue, innings, target, team, and runs scored in each delivery of the powerplay overs.
+      \item Summarized metrics for each over include:
+        \begin{itemize}
+          \item Number of deliveries ($d_i$).
+          \item Total runs scored ($r_i$).
+          \item Wickets lost ($w_i$).
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Statistical Observations:}
+    \begin{itemize}
+      \item \textbf{Average Runs by Over:}
+        \[
+          \text{1st Over: } 6, \quad \text{2nd Over: } 7, \quad \text{6th Over: } 8.3 \, (\text{highest}).
+        \]
+      \item \textbf{Standard Deviation of Runs by Over:}
+        \[
+          \text{Stabilizes at around 4-4.5 runs}.
+        \]
+      \item \textbf{Team-Specific Observations:}
+        \begin{itemize}
+          \item Delhi Daredevils (7.48 in 6th over) improved significantly as Delhi Capitals (8.94).
+          \item Top performers: Sunrisers Hyderabad, Chennai Super Kings.
+        \end{itemize}
+      \item \textbf{Impact of Wickets in Over 5 on Runs in Over 6:}
+        \begin{itemize}
+          \item 0 wickets: $8.77$ average runs.
+          \item 1 wicket: $6.7$ average runs.
+          \item 2 wickets: Limited data, average drops to $7.6$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Exploring the Data:}
+    \begin{itemize}
+      \item Tools like Google Sheets and Python are used to analyze and visualize patterns.
+      \item Examples include:
+        \begin{itemize}
+          \item Histograms for runs scored distribution.
+          \item Scatter plots, e.g., runs in over 6 vs. wickets in over 5.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Suggested Activity:}
+    \begin{itemize}
+      \item Students are encouraged to collect and analyze their own datasets.
+      \item Avoid curated data sources like Kaggle; focus on raw, real-world data.
+      \item Suggested size: At least 100 rows and 5 columns.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Powerplay Data:}
+First six overs of IPL innings show high scoring potential, with field restrictions influencing play.
+
+\textbf{Statistical Insights:}
+- Runs increase progressively through overs, peaking in the 6th over.
+- Team performance varies slightly, with top teams showing higher averages.
+- Wickets lost in earlier overs significantly impact scoring potential in subsequent overs.
+
+\textbf{Exploration:}
+Students are encouraged to analyze data using tools like Python or spreadsheets, focusing on descriptive statistics and visualization.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced IPL powerplay overs as a case study for statistical analysis.
+  \item Highlighted patterns and insights derived from the data.
+  \item Emphasized the importance of hands-on exploration with real-world datasets.
+\end{itemize}
+
+This example bridges theoretical statistics with practical applications in sports analytics.
+
+\end{document}

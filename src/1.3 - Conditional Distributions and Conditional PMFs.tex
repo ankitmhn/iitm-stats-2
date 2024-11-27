@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Conditional Distributions and Conditional PMFs}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec1.3.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Conditional PMFs:}
+    \begin{itemize}
+      \item The conditional PMF of a random variable $X$ given an event $A$ is defined as:
+        \[
+          P(X = t \mid A) = \frac{P(X = t \cap A)}{P(A)}.
+        \]
+      \item Conditioning can change the range of the random variable. For example, values of $X$ outside $A$ may no longer be possible.
+    \end{itemize}
+
+  \item \textbf{Extending to Two Random Variables:}
+    \begin{itemize}
+      \item For two random variables $X$ and $Y$ with joint PMF $f_{XY}(t_1, t_2)$:
+        \[
+          f_{Y \mid X}(t_2 \mid t_1) = \frac{f_{XY}(t_1, t_2)}{f_X(t_1)}.
+        \]
+      \item The numerator is the joint PMF $f_{XY}$, and the denominator is the marginal PMF $f_X$.
+    \end{itemize}
+
+  \item \textbf{Properties of Conditional PMFs:}
+    \begin{itemize}
+      \item The conditional PMF is a valid PMF, meaning:
+        \[
+          \sum_{t_2} f_{Y \mid X}(t_2 \mid t_1) = 1.
+        \]
+      \item Conditional PMFs allow calculation of joint PMFs using:
+        \[
+          f_{XY}(t_1, t_2) = f_{Y \mid X}(t_2 \mid t_1) \cdot f_X(t_1).
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Example 1: Joint PMF of $X$ and $Y$:}
+        \begin{itemize}
+          \item Joint PMF is given as a table.
+          \item Marginal PMFs $f_X$ and $f_Y$ are computed by summing rows and columns, respectively.
+          \item Conditional PMF $f_{Y \mid X}$ is computed by dividing joint probabilities by the marginal $f_X$.
+        \end{itemize}
+
+      \item \textbf{Example 2: Lottery Numbers:}
+        \begin{itemize}
+          \item Joint PMF of $X$ (units digit) and $Y$ (remainder modulo 4).
+          \item Conditional PMF $f_{Y \mid X}$ reflects how $Y$ depends on $X$.
+        \end{itemize}
+
+      \item \textbf{Example 3: General Calculation:}
+        \begin{itemize}
+          \item From a joint PMF table, compute $f_{Y \mid X}(t_2 \mid t_1)$ for specific $t_1$ by normalizing the corresponding row or column.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Useful Identities:}
+    \begin{itemize}
+      \item The relationship between joint, marginal, and conditional PMFs is:
+        \[
+          f_{XY}(t_1, t_2) = f_{Y \mid X}(t_2 \mid t_1) \cdot f_X(t_1) = f_{X \mid Y}(t_1 \mid t_2) \cdot f_Y(t_2).
+        \]
+      \item Summing conditional PMFs over the range of the conditioned variable gives 1:
+        \[
+          \sum_{t_2} f_{Y \mid X}(t_2 \mid t_1) = 1.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Conditional PMFs:}
+Probability distributions of one random variable given specific information about another variable or event.
+
+\textbf{Example:}
+If $f_{XY}(0, 1) = 1/8$ and $f_X(0) = 3/8$, then:
+\[
+  f_{Y \mid X}(1 \mid 0) = \frac{f_{XY}(0, 1)}{f_X(0)} = \frac{1/8}{3/8} = \frac{1}{3}.
+\]
+
+\textbf{Key Formula:}
+The joint PMF can be reconstructed from the conditional and marginal PMFs:
+\[
+  f_{XY}(t_1, t_2) = f_{Y \mid X}(t_2 \mid t_1) \cdot f_X(t_1).
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined conditional PMFs for single and multiple random variables.
+  \item Explored examples to compute conditional probabilities.
+  \item Highlighted the relationships between joint, marginal, and conditional PMFs.
+\end{itemize}
+
+Conditional PMFs are crucial for understanding dependencies between random variables and solving complex probabilistic problems.
+
+\end{document}
