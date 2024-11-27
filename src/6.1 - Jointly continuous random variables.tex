@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Jointly Continuous Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 5.3.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction:}
+    \begin{itemize}
+      \item Jointly continuous random variables describe the relationships between two or more continuous variables.
+      \item These models are crucial for analyzing phenomena involving simultaneous variation of multiple variables, such as sepal and petal dimensions in the Iris dataset.
+    \end{itemize}
+
+  \item \textbf{Joint Density Function:}
+    \begin{itemize}
+      \item A joint density function $f_{X,Y}(x,y)$ satisfies:
+        \begin{enumerate}
+          \item $f_{X,Y}(x,y) \geq 0$ for all $(x, y)$.
+          \item $\int_{-\infty}^\infty \int_{-\infty}^\infty f_{X,Y}(x,y) \, dx \, dy = 1$.
+        \end{enumerate}
+      \item The probability of $(X, Y)$ falling within a region $A$ is:
+        \[
+          P((X, Y) \in A) = \int_A f_{X,Y}(x,y) \, dx \, dy.
+        \]
+      \item Support is the region where $f_{X,Y}(x,y) > 0$.
+    \end{itemize}
+
+  \item \textbf{Uniform Joint Distribution Example:}
+    \begin{itemize}
+      \item Uniform density in a unit square: $f_{X,Y}(x,y) = 1$ for $0 \leq x, y \leq 1$.
+      \item Probability of a subregion is proportional to its area.
+      \item Example:
+        \begin{itemize}
+          \item For region $A$ with $x, y \in [0.1, 0.5]$:
+            \[
+              P((X, Y) \in A) = \int_{0.1}^{0.5} \int_{0.1}^{0.5} 1 \, dx \, dy = 0.16.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Non-Uniform Joint Density Example:}
+    \begin{itemize}
+      \item Example density: $f_{X,Y}(x,y) = x + y$ for $0 \leq x, y \leq 1$.
+      \item Validation:
+        \[
+          \int_0^1 \int_0^1 (x + y) \, dx \, dy = 1.
+        \]
+      \item Probability of region $A$: $x, y \in [0, 0.5]$:
+        \[
+          P((X, Y) \in A) = \int_0^{0.5} \int_0^{0.5} (x + y) \, dx \, dy = 0.125.
+        \]
+    \end{itemize}
+
+  \item \textbf{Visualization:}
+    \begin{itemize}
+      \item 2D and 3D plots help visualize joint densities, showing support and density variations.
+      \item Example: Uniform density forms a flat "plate" over the unit square; non-uniform density creates slopes.
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Useful for modeling correlated continuous phenomena, such as:
+        \begin{itemize}
+          \item Sepal length and width in flowers.
+          \item Temperature and humidity.
+        \end{itemize}
+      \item Simplifies probability calculations for regions of interest.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Jointly continuous random variables describe two or more variables with a shared density.
+
+\textbf{Uniform Example:}
+For $f_{X,Y}(x,y) = 1$ over a unit square, probability is the area of the region.
+
+\textbf{Non-Uniform Example:}
+For $f_{X,Y}(x,y) = x + y$, higher values occur near $(1,1)$, lower near $(0,0)$.
+
+\textbf{Applications:}
+Modeling real-world phenomena with interdependent variables.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined joint densities and their properties.
+  \item Explored uniform and non-uniform examples.
+  \item Highlighted applications in data science and probability.
+\end{itemize}
+
+Jointly continuous random variables provide powerful tools for modeling and analyzing multidimensional continuous data.
+
+\end{document}

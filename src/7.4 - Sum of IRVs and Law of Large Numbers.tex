@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Sum of Independent Random Variables and the Law of Large Numbers}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: lec7.4.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Sum of Random Variables:}
+    \begin{itemize}
+      \item For $n$ random variables $X_1, X_2, \dots, X_n$:
+        \[
+          S = \sum_{i=1}^n X_i.
+        \]
+      \item The expected value of $S$ is:
+        \[
+          \mathbb{E}[S] = \sum_{i=1}^n \mathbb{E}[X_i].
+        \]
+      \item If $X_i$ are pairwise uncorrelated, the variance of $S$ is:
+        \[
+          \text{Var}(S) = \sum_{i=1}^n \text{Var}(X_i).
+        \]
+      \item Independence implies pairwise uncorrelation, but the converse is not true.
+    \end{itemize}
+
+  \item \textbf{Linear Combinations of Random Variables:}
+    \begin{itemize}
+      \item For a linear combination of random variables:
+        \[
+          L = \sum_{i=1}^n a_i X_i,
+        \]
+        where $a_i$ are constants:
+        \begin{align*}
+          \mathbb{E}[L] &= \sum_{i=1}^n a_i \mathbb{E}[X_i], \\
+          \text{Var}(L) &= \sum_{i=1}^n a_i^2 \text{Var}(X_i), \quad \text{if pairwise uncorrelated}.
+        \end{align*}
+    \end{itemize}
+
+  \item \textbf{Sample Mean:}
+    \begin{itemize}
+      \item For $X_1, X_2, \dots, X_n$ iid with mean $\mu$ and variance $\sigma^2$, the sample mean is:
+        \[
+          \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i.
+        \]
+      \item Expected value:
+        \[
+          \mathbb{E}[\bar{X}] = \mu.
+        \]
+      \item Variance:
+        \[
+          \text{Var}(\bar{X}) = \frac{\sigma^2}{n}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Weak Law of Large Numbers (WLLN):}
+    \begin{itemize}
+      \item States that as $n \to \infty$, the sample mean $\bar{X}$ converges to the true mean $\mu$ in probability:
+        \[
+          P(|\bar{X} - \mu| > \delta) \leq \frac{\sigma^2}{n \delta^2}.
+        \]
+      \item Derived using Chebyshev's inequality.
+      \item Highlights the shrinking variance of $\bar{X}$ as $n$ increases.
+    \end{itemize}
+
+  \item \textbf{Examples and Applications:}
+    \begin{itemize}
+      \item \textbf{Bernoulli($p$) Trials:}
+        \begin{itemize}
+          \item Variance: $\sigma^2 = p(1-p)$.
+          \item Probability of sample mean lying within $[p - \delta, p + \delta]$ increases with $n$.
+        \end{itemize}
+      \item \textbf{Uniform and Normal Distributions:}
+        \begin{itemize}
+          \item Variances depend on distribution parameters and scale with $1/n$ for the sample mean.
+        \end{itemize}
+      \item \textbf{Real Data Examples:}
+        \begin{itemize}
+          \item Iris dataset (sepal length): Sample variance $\sigma^2 = 0.1242$ for 50 samples.
+          \item Taj Mahal air quality (PM2.5): Sample variance $\sigma^2 = 15.92$ for 11 samples, highlighting issues with small datasets.
+          \item IPL scores: Large sample size (1598 observations) enables high confidence in the sample mean estimate.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Insights:}
+    \begin{itemize}
+      \item Larger sample sizes lead to smaller confidence intervals for the sample mean.
+      \item Small datasets may result in wide confidence intervals, limiting precision.
+      \item The WLLN provides probabilistic guarantees for the convergence of the sample mean to the true mean.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Sum of Random Variables:}
+- Mean and variance of the sum depend on whether the variables are uncorrelated or independent.
+
+\textbf{Sample Mean:}
+- Converges to the true mean as the sample size increases (WLLN).
+
+\textbf{Applications:}
+- Analyze datasets like Iris, Taj Mahal air quality, and IPL scores to see how sample size affects confidence in results.
+
+\textbf{Key Takeaway:}
+Larger datasets improve the reliability of statistical estimates, with smaller variances in sample means.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Discussed the properties of sums and means of random variables.
+  \item Introduced the Weak Law of Large Numbers and its implications.
+  \item Examined the effects of sample size on confidence intervals using real-world examples.
+\end{itemize}
+
+The WLLN and related concepts are foundational for understanding how sample statistics approximate population parameters.
+
+\end{document}

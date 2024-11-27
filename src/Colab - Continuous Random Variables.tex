@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Continuous Random Variables - Colab Simulation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.9.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Purpose:}
+    \begin{itemize}
+      \item Simulate continuous random variables in Python using Google Colab.
+      \item Explore Monte Carlo techniques for estimating probabilities and comparing theoretical and empirical results.
+    \end{itemize}
+
+  \item \textbf{Packages Used:}
+    \begin{itemize}
+      \item \texttt{NumPy}: For generating numerical data.
+      \item \texttt{scipy.stats}: For generating random samples from continuous distributions.
+      \item \texttt{matplotlib.pyplot}: For plotting histograms and densities.
+    \end{itemize}
+
+  \item \textbf{Key Steps:}
+    \begin{enumerate}
+      \item Import necessary libraries:
+        \begin{verbatim}
+        import numpy as np
+        from scipy.stats import uniform, expon, norm
+        import matplotlib.pyplot as plt
+        \end{verbatim}
+
+      \item Generate samples from continuous distributions using \texttt{scipy.stats}:
+        \begin{itemize}
+          \item Uniform distribution: \texttt{st.uniform.rvs(loc, scale, size)}.
+          \item Exponential distribution: \texttt{st.expon.rvs(scale, size)}.
+          \item Normal distribution: \texttt{st.norm.rvs(loc, scale, size)}.
+        \end{itemize}
+
+      \item Plot histograms and overlay theoretical PDFs for comparison.
+    \end{enumerate}
+
+  \item \textbf{Examples and Results:}
+    \begin{itemize}
+      \item \textbf{Uniform Distribution:}
+        \begin{itemize}
+          \item Samples generated in range $[0, 3]$ with 10,000 values.
+          \item Histogram with bins overlaid by theoretical density $f_X(x) = \frac{1}{3}$ for $0 \leq x \leq 3$.
+          \item Visual comparison confirms empirical data approximates the theoretical PDF.
+        \end{itemize}
+
+      \item \textbf{Exponential Distribution:}
+        \begin{itemize}
+          \item Parameter $\lambda = 2$, 10,000 samples generated.
+          \item Histogram plotted with theoretical density $f_X(x) = 2e^{-2x}$.
+          \item Density decays rapidly, matching the histogram.
+        \end{itemize}
+
+      \item \textbf{Normal Distribution:}
+        \begin{itemize}
+          \item Mean $\mu = 0$, standard deviation $\sigma = 1$.
+          \item Histogram of samples overlaid with theoretical PDF.
+          \item Matches closely, showing the bell-shaped curve.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Practical Insights:}
+    \begin{itemize}
+      \item Histograms provide a visual representation of data distribution and are useful for verifying the fit of a theoretical model.
+      \item Comparing histograms with theoretical PDFs helps identify suitable distributions for data modeling.
+      \item Adjusting bin sizes in histograms can improve visualization and interpretation.
+    \end{itemize}
+
+  \item \textbf{Monte Carlo Simulations:}
+    \begin{itemize}
+      \item Generate random samples to estimate probabilities and distribution properties.
+      \item Verify theoretical results through empirical data.
+      \item Useful for exploring large datasets where analytical solutions are complex.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Objective:} Simulate and analyze continuous random variables using Python.
+
+\textbf{Examples:}
+1. Uniform: Constant density across an interval.
+2. Exponential: Rapidly decaying density.
+3. Normal: Symmetric bell curve.
+
+\textbf{Tools:}
+- Histograms to visualize data.
+- PDFs to verify theoretical distributions.
+
+\textbf{Key Takeaway:} Simulation bridges theory and practice, offering insights into real-world data distributions.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored continuous random variable simulation in Colab.
+  \item Visualized data using histograms and theoretical densities.
+  \item Discussed the use of Monte Carlo techniques for empirical validation.
+\end{itemize}
+
+Simulation is a powerful tool for understanding and modeling continuous random variables, providing practical verification of theoretical concepts.
+
+\end{document}

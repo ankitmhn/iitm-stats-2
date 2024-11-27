@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Independence of Continuous Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 5.5.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Independence:}
+    \begin{itemize}
+      \item Two continuous random variables $X$ and $Y$ are independent if their joint density function can be expressed as the product of their marginal densities:
+        \[
+          f_{X,Y}(x,y) = f_X(x) f_Y(y).
+        \]
+      \item Independence implies that knowing the value of one variable does not provide information about the other.
+    \end{itemize}
+
+  \item \textbf{Verification of Independence:}
+    \begin{itemize}
+      \item To verify independence:
+        \begin{enumerate}
+          \item Start with the joint density $f_{X,Y}(x,y)$.
+          \item Compute the marginal densities:
+            \[
+              f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, dy, \quad f_Y(y) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, dx.
+            \]
+          \item Check if $f_{X,Y}(x,y) = f_X(x) f_Y(y)$.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Key Insights:}
+    \begin{itemize}
+      \item Independence simplifies calculations since the joint density is the product of the marginals.
+      \item Assuming independence when variables are not independent can lead to incorrect conclusions.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Uniform Distribution on a Unit Square:}
+        \begin{itemize}
+          \item Joint density:
+            \[
+              f_{X,Y}(x,y) =
+              \begin{cases}
+                1, & 0 \leq x, y \leq 1, \\
+                0, & \text{otherwise}.
+              \end{cases}
+            \]
+          \item Marginals:
+            \[
+              f_X(x) = \int_0^1 1 \, dy = 1, \quad f_Y(y) = \int_0^1 1 \, dx = 1.
+            \]
+          \item Since $f_{X,Y}(x,y) = f_X(x) f_Y(y)$, $X$ and $Y$ are independent.
+        \end{itemize}
+
+      \item \textbf{Non-Uniform Example:}
+        \begin{itemize}
+          \item Joint density:
+            \[
+              f_{X,Y}(x,y) =
+              \begin{cases}
+                2, & 0 \leq x \leq y \leq 1, \\
+                0, & \text{otherwise}.
+              \end{cases}
+            \]
+          \item Marginals:
+            \[
+              f_X(x) = \int_x^1 2 \, dy = 2(1-x), \quad f_Y(y) = \int_0^y 2 \, dx = 2y.
+            \]
+          \item Here, $f_{X,Y}(x,y) \neq f_X(x) f_Y(y)$, so $X$ and $Y$ are not independent.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Independence is often assumed in practical models to simplify calculations.
+      \item When independence is valid, it facilitates easier computation of joint probabilities and densities.
+    \end{itemize}
+
+  \item \textbf{Worked Example: Independent Exponentials:}
+    \begin{itemize}
+      \item $X, Y \sim \text{Exponential}(\lambda)$ are independent:
+        \[
+          f_X(x) = \lambda e^{-\lambda x}, \quad f_Y(y) = \lambda e^{-\lambda y}.
+        \]
+      \item Joint density:
+        \[
+          f_{X,Y}(x,y) = f_X(x) f_Y(y) = \lambda^2 e^{-\lambda(x+y)}, \quad x, y > 0.
+        \]
+      \item Probability that $X+Y > c$:
+        \[
+          P(X+Y > c) = \int_0^\infty \int_{c-y}^\infty \lambda^2 e^{-\lambda(x+y)} \, dx \, dy.
+        \]
+      \item Solve step by step to obtain:
+        \[
+          P(X+Y > c) = e^{-\lambda c}.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Independence:}
+Two variables are independent if their joint density equals the product of their marginals.
+
+\textbf{Key Idea:}
+- Independence simplifies computations.
+- Assuming independence without validation can lead to errors.
+
+\textbf{Example:}
+- Independent exponential variables yield:
+\[
+  f_{X,Y}(x,y) = \lambda^2 e^{-\lambda(x+y)}.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined independence for continuous random variables.
+  \item Demonstrated verification and implications of independence.
+  \item Worked through examples, highlighting practical use cases.
+\end{itemize}
+
+Independence is a critical concept that simplifies analysis and appears frequently in real-world probabilistic models.
+
+\end{document}

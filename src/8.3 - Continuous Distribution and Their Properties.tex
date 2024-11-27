@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Continuous Distributions and Their Properties}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 7.7.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Purpose:}
+    \begin{itemize}
+      \item Explore key continuous distributions used in statistics.
+      \item Focus on their properties, shapes, and interconnections.
+      \item Emphasize intuition and visualization over intricate calculations.
+    \end{itemize}
+
+  \item \textbf{Parameters of Distributions:}
+    \begin{itemize}
+      \item Key parameters are categorized as:
+        \begin{itemize}
+          \item \textbf{Shape Parameters:} Dictate the overall form (e.g., skewness).
+          \item \textbf{Location Parameters:} Determine the central tendency.
+          \item \textbf{Scale Parameters:} Control the spread or dispersion.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Highlighted Distributions:}
+    \begin{enumerate}
+      \item \textbf{Normal Distribution:}
+        \begin{itemize}
+          \item PDF:
+            \[
+              f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+            \]
+          \item Properties:
+            \begin{itemize}
+              \item Linear combinations of independent normal variables remain normal.
+              \item Applications: Central Limit Theorem, error analysis.
+            \end{itemize}
+        \end{itemize}
+
+      \item \textbf{Gamma Distribution:}
+        \begin{itemize}
+          \item PDF (proportional form):
+            \[
+              f_X(x) \propto x^{\alpha - 1} e^{-\beta x}, \quad x > 0.
+            \]
+          \item Special case: $\alpha = 1$ gives the exponential distribution.
+          \item Applications: Modeling waiting times, rainfall distributions.
+        \end{itemize}
+
+      \item \textbf{Beta Distribution:}
+        \begin{itemize}
+          \item PDF (proportional form):
+            \[
+              f_X(x) \propto x^{\alpha - 1}(1-x)^{\beta - 1}, \quad 0 < x < 1.
+            \]
+          \item Properties:
+            \begin{itemize}
+              \item Mean:
+                \[
+                  \mathbb{E}[X] = \frac{\alpha}{\alpha + \beta}.
+                \]
+              \item Variance:
+                \[
+                  \text{Var}(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}.
+                \]
+            \end{itemize}
+        \end{itemize}
+
+      \item \textbf{Cauchy Distribution:}
+        \begin{itemize}
+          \item PDF:
+            \[
+              f_X(x) = \frac{1}{\pi \alpha} \frac{\alpha^2}{\alpha^2 + (x-\theta)^2}.
+            \]
+          \item Properties:
+            \begin{itemize}
+              \item Undefined mean and variance.
+              \item Ratio of two independent normal variables is Cauchy.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Visualization and Applications:}
+    \begin{itemize}
+      \item Histograms and PDFs help recognize distribution shapes.
+      \item Identifying distribution types simplifies modeling tasks in real-world problems.
+      \item Examples:
+        \begin{itemize}
+          \item Normal: Common in measurement errors.
+          \item Gamma: Aggregate waiting times.
+          \item Beta: Probabilities in a finite range.
+          \item Cauchy: Heavy-tailed phenomena.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Distributions like Normal, Gamma, Beta, and Cauchy describe various real-world processes. Their parameters dictate shape, location, and spread.
+
+\textbf{Applications:}
+- Normal for averages and measurement errors.
+- Gamma for waiting times.
+- Beta for probabilities in [0, 1].
+- Cauchy for heavy tails.
+
+\textbf{Why It Matters:}
+Understanding these distributions helps recognize patterns in data and choose appropriate models.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored common continuous distributions and their properties.
+  \item Discussed connections, like how ratios or sums of variables link distributions.
+  \item Emphasized visualization and intuition to understand shapes and behaviors.
+\end{itemize}
+
+These distributions and their properties form a foundation for advanced statistical modeling and data analysis.
+
+\end{document}

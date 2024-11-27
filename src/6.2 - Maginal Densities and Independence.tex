@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Marginal Densities and Independence}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 5.4.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Marginal Densities:}
+    \begin{itemize}
+      \item For two jointly continuous random variables $X$ and $Y$ with joint density $f_{X,Y}(x,y)$:
+        \[
+          f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, dy, \quad f_Y(y) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, dx.
+        \]
+      \item Marginal densities describe individual distributions of $X$ and $Y$, integrating out the other variable.
+      \item Visualization: Imagine a 3D density function where slicing along one axis yields a 2D marginal density function.
+    \end{itemize}
+
+  \item \textbf{Independence:}
+    \begin{itemize}
+      \item $X$ and $Y$ are independent if and only if:
+        \[
+          f_{X,Y}(x,y) = f_X(x)f_Y(y).
+        \]
+      \item Independence implies that the joint density is the product of the marginals, with no dependency between variables.
+    \end{itemize}
+
+  \item \textbf{Uniform Example:}
+    \begin{itemize}
+      \item Joint density:
+        \[
+          f_{X,Y}(x,y) =
+          \begin{cases}
+            1, & 0 \leq x, y \leq 1, \\
+            0, & \text{otherwise}.
+          \end{cases}
+        \]
+      \item Marginal densities:
+        \[
+          f_X(x) = \int_0^1 1 \, dy = 1, \quad f_Y(y) = \int_0^1 1 \, dx = 1.
+        \]
+      \item Both $f_X(x)$ and $f_Y(y)$ are uniform on $[0, 1]$.
+      \item Marginal densities alone do not uniquely determine the joint density.
+    \end{itemize}
+
+  \item \textbf{Non-Uniform Example:}
+    \begin{itemize}
+      \item Joint density:
+        \[
+          f_{X,Y}(x,y) =
+          \begin{cases}
+            2, & 0 \leq x \leq y \leq 1, \\
+            0, & \text{otherwise}.
+          \end{cases}
+        \]
+      \item Marginal densities:
+        \[
+          f_X(x) = \int_x^1 2 \, dy = 2(1-x), \quad f_Y(y) = \int_0^y 2 \, dx = 2y.
+        \]
+      \item This example illustrates non-uniform marginals and non-rectangular support regions.
+    \end{itemize}
+
+  \item \textbf{Triangular Support Example:}
+    \begin{itemize}
+      \item Joint density:
+        \[
+          f_{X,Y}(x,y) =
+          \begin{cases}
+            1, & 0 \leq x \leq y \leq 1, \\
+            0, & \text{otherwise}.
+          \end{cases}
+        \]
+      \item Marginal densities:
+        \[
+          f_X(x) = \int_x^1 1 \, dy = 1-x, \quad f_Y(y) = \int_0^y 1 \, dx = y.
+        \]
+      \item Triangular regions illustrate how support impacts marginal densities.
+    \end{itemize}
+
+  \item \textbf{Key Insights:}
+    \begin{itemize}
+      \item Marginal densities can be calculated from joint densities, but the reverse is not unique.
+      \item Joint densities must be carefully modeled as different joint densities can yield the same marginals.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Marginal Densities:}
+Describe the individual distributions of $X$ and $Y$ by integrating the joint density.
+
+\textbf{Independence:}
+$X$ and $Y$ are independent if their joint density equals the product of their marginals.
+
+\textbf{Example:}
+1. Uniform on $[0,1]^2$: Marginals are uniform, but marginals alone don't define the joint density.
+2. Non-uniform regions: Triangular support changes marginals.
+
+\textbf{Key Idea:}
+Marginals describe individual variables, but the joint density shows how they are connected.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined marginal densities and their computation.
+  \item Discussed independence for continuous random variables.
+  \item Highlighted examples showing how joint densities impact marginals.
+\end{itemize}
+
+Understanding marginal densities and independence is essential for analyzing relationships between continuous random variables.
+
+\end{document}

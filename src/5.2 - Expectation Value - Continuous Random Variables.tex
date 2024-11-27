@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Continuous Random Variables - Expected Value}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.8.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Expected Value:}
+    \begin{itemize}
+      \item Expected value provides the mean or central tendency of a distribution.
+      \item For continuous random variables, the expected value of a function $g(X)$ is:
+        \[
+          E[g(X)] = \int_{-\infty}^\infty g(x) f_X(x) \, dx,
+        \]
+        where $f_X(x)$ is the PDF of $X$.
+      \item Integration is limited to the support of $X$ where $f_X(x) > 0$.
+    \end{itemize}
+
+  \item \textbf{Connection to Discrete Case:}
+    \begin{itemize}
+      \item In discrete random variables:
+        \[
+          E[g(X)] = \sum_x g(x) P(X = x).
+        \]
+      \item In continuous variables, summation is replaced by integration, and the PDF replaces the PMF.
+    \end{itemize}
+
+  \item \textbf{Special Cases:}
+    \begin{itemize}
+      \item \textbf{Mean:} $g(X) = X$.
+        \[
+          E[X] = \int_{-\infty}^\infty x f_X(x) \, dx.
+        \]
+      \item \textbf{Variance:} $g(X) = (X - \mu)^2$, where $\mu = E[X]$.
+        \[
+          \text{Var}(X) = E[X^2] - (E[X])^2.
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Uniform Distribution:}
+        \[
+          f_X(x) = \frac{1}{b-a}, \quad a \leq x \leq b.
+        \]
+        - Mean: $\mu = \frac{a+b}{2}$.
+        - Variance: $\sigma^2 = \frac{(b-a)^2}{12}$.
+      \item \textbf{Exponential Distribution:}
+        \[
+          f_X(x) = \lambda e^{-\lambda x}, \quad x \geq 0.
+        \]
+        - Mean: $\mu = \frac{1}{\lambda}$.
+        - Variance: $\sigma^2 = \frac{1}{\lambda^2}$.
+      \item \textbf{Normal Distribution:}
+        \[
+          f_X(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+        \]
+        - Mean: $\mu$.
+        - Variance: $\sigma^2$.
+    \end{itemize}
+
+  \item \textbf{Significance of Mean and Variance:}
+    \begin{itemize}
+      \item Mean provides the central value.
+      \item Variance measures the spread around the mean.
+      \item Useful for comparing distributions and assessing data variability.
+    \end{itemize}
+
+  \item \textbf{Practical Insights:}
+    \begin{itemize}
+      \item Mean and variance are often easier to estimate than the entire distribution.
+      \item Understanding these properties helps in identifying the nature of the random variable (e.g., exponential distributions have variance equal to the square of the mean).
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Expected Value for Continuous Variables:}
+- Formula:
+\[
+  E[g(X)] = \int_{-\infty}^\infty g(x) f_X(x) \, dx.
+\]
+- Examples:
+- Uniform: $\mu = \frac{a+b}{2}$, $\sigma^2 = \frac{(b-a)^2}{12}$.
+- Exponential: $\mu = \frac{1}{\lambda}$, $\sigma^2 = \frac{1}{\lambda^2}$.
+
+\textbf{Why It Matters:}
+- Mean: Central tendency of the distribution.
+- Variance: Spread or variability around the mean.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Extended the concept of expected value to continuous random variables.
+  \item Derived formulas for mean and variance.
+  \item Discussed common distributions and their properties.
+\end{itemize}
+
+Expected value and variance are foundational concepts for analyzing and understanding distributions, providing insights into their behavior and characteristics.
+
+\end{document}

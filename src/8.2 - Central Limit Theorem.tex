@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Central Limit Theorem (CLT)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 7.6.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of CLT:}
+    \begin{itemize}
+      \item The Central Limit Theorem (CLT) states that for iid random variables $X_1, X_2, \dots, X_n$ with mean $\mu$ and variance $\sigma^2$:
+        \[
+          Y = \frac{\sum_{i=1}^n (X_i - \mu)}{\sqrt{n}}
+        \]
+        converges in distribution to the standard normal distribution $N(0, 1)$ as $n \to \infty$.
+      \item This result is remarkable because it holds regardless of the original distribution of $X_i$, provided $\mathbb{E}[X_i] = \mu$ and $\text{Var}(X_i) = \sigma^2$.
+    \end{itemize}
+
+  \item \textbf{Moment Generating Function (MGF):}
+    \begin{itemize}
+      \item The MGF for a random variable $X$ is defined as:
+        \[
+          M_X(\lambda) = \mathbb{E}[e^{\lambda X}].
+        \]
+      \item Properties:
+        \begin{itemize}
+          \item $M_X(\lambda)$ determines the distribution of $X$.
+          \item If $M_X(\lambda)$ exists for $\lambda$ in an interval around $0$, it can be expanded as:
+            \[
+              M_X(\lambda) = 1 + \lambda \mathbb{E}[X] + \frac{\lambda^2}{2} \mathbb{E}[X^2] + \cdots,
+            \]
+            where coefficients correspond to moments of $X$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{CLT and Scaling:}
+    \begin{itemize}
+      \item When the sum $S = \sum_{i=1}^n X_i$ is scaled by $\sqrt{n}$:
+        \[
+          Y = \frac{S - n\mu}{\sqrt{n\sigma^2}},
+        \]
+        the resulting distribution approximates $N(0, 1)$.
+      \item Scaling by $\sqrt{n}$ rather than $n$ is crucial for obtaining a meaningful distribution in the limit.
+    \end{itemize}
+
+  \item \textbf{Applications of CLT:}
+    \begin{itemize}
+      \item \textbf{Probability Approximations:}
+        \begin{itemize}
+          \item Example: Binomial$(n, p)$
+            \[
+              P(Y - n\mu > \delta n\mu) \approx 1 - F\left(\frac{\delta n\mu}{\sqrt{n\sigma^2}}\right),
+            \]
+            where $F(z)$ is the CDF of $N(0, 1)$.
+        \end{itemize}
+      \item \textbf{Continuous Distributions:}
+        \begin{itemize}
+          \item Uniform$[-1, 1]$ with $\mu = 0$ and $\sigma^2 = \frac{1}{3}$:
+            \[
+              P\left(\frac{Y}{\sqrt{\frac{n}{3}}} > 0.1\sqrt{n}\right) \approx 1 - F(0.1\sqrt{3n}).
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Comparison with Weak Law of Large Numbers (WLLN):}
+    \begin{itemize}
+      \item WLLN:
+        \[
+          \frac{S}{n} \to \mu \quad \text{in probability as } n \to \infty.
+        \]
+      \item CLT:
+        \[
+          \frac{S - n\mu}{\sqrt{n\sigma^2}} \to N(0, 1) \quad \text{in distribution as } n \to \infty.
+        \]
+      \item CLT provides a distributional approximation, while WLLN focuses on convergence to a constant.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Central Limit Theorem:}
+- As sample size increases, the sum (appropriately scaled) of iid random variables approaches a normal distribution, regardless of their original distribution.
+
+\textbf{Why It Matters:}
+- Simplifies complex probability calculations.
+- Explains why normal distributions appear frequently in real-world data.
+
+\textbf{Applications:}
+1. Approximating probabilities for binomial or uniform distributions.
+2. Estimating probabilities in high-dimensional or aggregated data.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the Central Limit Theorem and its assumptions.
+  \item Discussed the importance of scaling by $\sqrt{n}$ for distributional convergence.
+  \item Applied CLT to practical examples, demonstrating its utility in probability approximations.
+\end{itemize}
+
+The CLT is a cornerstone of probability and statistics, explaining the ubiquity of the normal distribution in diverse contexts.
+
+\end{document}

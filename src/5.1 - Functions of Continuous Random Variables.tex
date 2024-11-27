@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Functions of a Continuous Random Variable}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.7.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction:}
+    \begin{itemize}
+      \item A function of a continuous random variable can generate new random variables by applying transformations.
+      \item Common examples include scaling, translation, and nonlinear transformations.
+    \end{itemize}
+
+  \item \textbf{Methodology:}
+    \begin{itemize}
+      \item Start by finding the cumulative distribution function (CDF) of the transformed variable.
+      \item If differentiable, derive the probability density function (PDF) from the CDF:
+        \[
+          f_Y(y) = \frac{d}{dy}F_Y(y).
+        \]
+    \end{itemize}
+
+  \item \textbf{Scaling Example:}
+    \begin{itemize}
+      \item If $X \sim \text{Uniform}[0, 1]$ and $Y = 2X$, then:
+        \begin{itemize}
+          \item $Y \sim \text{Uniform}[0, 2]$ with:
+            \[
+              f_Y(y) =
+              \begin{cases}
+                \frac{1}{2}, & 0 \leq y \leq 2, \\
+                0, & \text{otherwise}.
+              \end{cases}
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{General Formula for Monotonic Functions:}
+    \begin{itemize}
+      \item For monotonic functions $g(X)$ with inverse $g^{-1}(y)$, the PDF of $Y = g(X)$ is:
+        \[
+          f_Y(y) = \frac{f_X(g^{-1}(y))}{\lvert g'(g^{-1}(y)) \rvert}.
+        \]
+      \item Example:
+        \begin{itemize}
+          \item If $X \sim \text{Exponential}(\lambda)$ and $Y = X^2$, then:
+            \[
+              f_Y(y) = \frac{\lambda e^{-\lambda \sqrt{y}}}{2\sqrt{y}}, \quad y > 0.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Non-Monotonic Functions:}
+    \begin{itemize}
+      \item When $g(X)$ is not monotonic, divide the domain into regions where $g(X)$ is monotonic.
+      \item Example:
+        \begin{itemize}
+          \item If $X \sim \text{Uniform}[-3, 1]$ and $Y = X^2$, the PDF of $Y$ must account for the non-monotonicity:
+            \[
+              f_Y(y) =
+              \begin{cases}
+                \frac{1}{2\sqrt{y}}, & 0 \leq y \leq 1, \\
+                \frac{1}{4\sqrt{y}}, & 1 < y \leq 9.
+              \end{cases}
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Special Case: Affine Transformations:}
+    \begin{itemize}
+      \item If $Y = aX + b$:
+        \[
+          f_Y(y) = \frac{1}{\lvert a \rvert} f_X\left(\frac{y-b}{a}\right).
+        \]
+      \item Example:
+        \begin{itemize}
+          \item $X \sim \text{Normal}(0, 1)$ and $Y = 2X + 3$, then $Y \sim \text{Normal}(3, 4)$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Mixtures and Discontinuities:}
+    \begin{itemize}
+      \item Functions like $g(X) = \max(X, 0)$ can produce distributions that are mixtures of discrete and continuous parts.
+      \item Example:
+        \begin{itemize}
+          \item If $X \sim \text{Uniform}[-3, 1]$ and $Y = \max(X, 0)$, the resulting distribution is:
+            \[
+              f_Y(y) =
+              \begin{cases}
+                \frac{3}{4}, & y = 0, \\
+                \frac{1}{4}, & 0 < y \leq 1.
+              \end{cases}
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{General Approach:}
+    \begin{itemize}
+      \item For any $g(X)$:
+        \begin{enumerate}
+          \item Identify the regions of monotonicity.
+          \item Compute the CDF by integrating the original PDF over appropriate regions.
+          \item Derive the PDF if needed.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Transforming Random Variables:}
+Functions of a random variable, such as scaling or squaring, create new distributions.
+
+\textbf{Key Tools:}
+- Monotonic functions: Use the formula for PDF transformation.
+- Non-monotonic functions: Divide into regions and compute probabilities separately.
+
+\textbf{Examples:}
+1. Scaling: $Y = 2X$ scales the range and flattens the PDF.
+2. Squaring: $Y = X^2$ creates asymmetry in the PDF.
+
+\textbf{Applications:}
+- Transformations allow modeling of derived quantities (e.g., area, volume, or thresholds).
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Discussed transformations of continuous random variables.
+  \item Introduced methods for deriving PDFs for transformed variables.
+  \item Highlighted cases with monotonic, non-monotonic, and affine transformations.
+\end{itemize}
+
+Understanding transformations is crucial for modeling real-world scenarios involving derived quantities.
+
+\end{document}

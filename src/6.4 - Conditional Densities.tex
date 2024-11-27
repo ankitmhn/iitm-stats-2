@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Conditional Densities}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 5.6.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Conditional Density:}
+    \begin{itemize}
+      \item The conditional density of $Y$ given $X = a$ is defined as:
+        \[
+          f_{Y|X}(y|a) = \frac{f_{X,Y}(a, y)}{f_X(a)}, \quad \text{for } f_X(a) > 0.
+        \]
+      \item This density describes the distribution of $Y$ for a fixed value of $X = a$.
+      \item Even though $P(X = a) = 0$ for continuous variables, the density is valid and derived as a limiting concept.
+    \end{itemize}
+
+  \item \textbf{Properties of Conditional Density:}
+    \begin{itemize}
+      \item $f_{Y|X}(y|a) \geq 0$ for all $y$.
+      \item The total integral over $y$ equals 1:
+        \[
+          \int_{-\infty}^\infty f_{Y|X}(y|a) \, dy = 1.
+        \]
+      \item The joint density can be expressed in terms of the conditional density:
+        \[
+          f_{X,Y}(x,y) = f_X(x) f_{Y|X}(y|x).
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Uniform Distribution on $[0, 1] \times [0, 1]$:}
+        \begin{itemize}
+          \item Joint density: $f_{X,Y}(x,y) = 1$ for $0 \leq x, y \leq 1$.
+          \item Marginals: $f_X(x) = 1$ and $f_Y(y) = 1$.
+          \item Conditional densities:
+            \[
+              f_{Y|X}(y|x) = 1, \quad f_{X|Y}(x|y) = 1, \quad \text{for } 0 \leq x, y \leq 1.
+            \]
+        \end{itemize}
+
+      \item \textbf{Non-Uniform Example:}
+        \begin{itemize}
+          \item Joint density: $f_{X,Y}(x,y) = x + y$ for $0 \leq x, y \leq 1$.
+          \item Marginals:
+            \[
+              f_X(x) = \int_0^1 (x + y) \, dy = x + \frac{1}{2}, \quad f_Y(y) = \int_0^1 (x + y) \, dx = y + \frac{1}{2}.
+            \]
+          \item Conditional density of $Y|X = a$:
+            \[
+              f_{Y|X}(y|a) = \frac{a + y}{a + \frac{1}{2}}, \quad 0 \leq y \leq 1.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Visualizing Conditional Densities:}
+    \begin{itemize}
+      \item Conditional densities can be viewed as slices of the joint density at specific values of $X$ or $Y$.
+      \item For example, fixing $X = a$ gives the distribution of $Y$ conditional on $X = a$.
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Conditional densities are essential for understanding relationships between variables.
+      \item Useful in regression, where $Y$ is modeled given $X$.
+      \item Enables computation of probabilities in constrained scenarios.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What is a Conditional Density?}
+- Describes how one variable (e.g., $Y$) behaves given a specific value of another variable (e.g., $X = a$).
+- Formula:
+\[
+  f_{Y|X}(y|a) = \frac{f_{X,Y}(a, y)}{f_X(a)}.
+\]
+
+\textbf{Example:}
+For a non-uniform joint density $f_{X,Y}(x,y) = x + y$:
+\[
+  f_{Y|X}(y|a) = \frac{a + y}{a + \frac{1}{2}}, \quad 0 \leq y \leq 1.
+\]
+
+\textbf{Key Idea:}
+Conditional densities are derived by normalizing slices of the joint density.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined conditional densities for continuous random variables.
+  \item Explored examples and derived properties.
+  \item Highlighted practical applications in probability and statistics.
+\end{itemize}
+
+Understanding conditional densities is crucial for analyzing relationships and dependencies in continuous random variables.
+
+\end{document}

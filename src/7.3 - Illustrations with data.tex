@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Illustrations with Data}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: lec7.3.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Purpose:}
+    \begin{itemize}
+      \item Explore real-world datasets to compute sample statistics and infer insights.
+      \item Assess the applicability of iid sampling models for such datasets.
+    \end{itemize}
+
+  \item \textbf{Iris Dataset:}
+    \begin{itemize}
+      \item Data:
+        \begin{itemize}
+          \item Three classes (0, 1, 2) with 50 samples each.
+          \item Features: Sepal length, Sepal width, Petal length, Petal width.
+        \end{itemize}
+      \item Analysis:
+        \begin{itemize}
+          \item Compute sample mean, variance, and proportions for features like sepal length.
+          \item Example:
+            \[
+              S(\text{sepal length} > 5) = \frac{22}{50}, \quad S(4.8 \leq \text{sepal length} \leq 5.2) = \frac{20}{50}.
+            \]
+        \end{itemize}
+      \item Observations:
+        \begin{itemize}
+          \item Model the data as iid samples from an unknown distribution.
+          \item While the iid model seems reasonable for this dataset, it's a first-order approximation.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Taj Mahal Air Quality Dataset:}
+    \begin{itemize}
+      \item Data:
+        \begin{itemize}
+          \item 11 observations of pollution levels (SO2, NO2, PM2.5, PM10) in April 2021.
+          \item Maximum allowable limits: 80 (SO2, NO2), 60 (PM2.5), 100 (PM10).
+        \end{itemize}
+      \item Statistics:
+        \begin{itemize}
+          \item Sample means and variances computed for all pollutants.
+          \item Proportions:
+            \[
+              P(\text{exceeds max}) =
+              \begin{cases}
+                0, & \text{SO2, NO2}, \\
+                \frac{7}{11}, & \text{PM2.5}, \\
+                \frac{11}{11}, & \text{PM10}.
+              \end{cases}
+            \]
+        \end{itemize}
+      \item Observations:
+        \begin{itemize}
+          \item The iid sampling model may not be appropriate due to temporal correlations.
+          \item External factors (e.g., fires, seasonal effects) could influence the data.
+        \end{itemize}
+      \item Limitations:
+        \begin{itemize}
+          \item Small dataset with 11 observations is insufficient for strong statistical conclusions.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{IPL Dataset:}
+    \begin{itemize}
+      \item Data:
+        \begin{itemize}
+          \item Runs scored on first three deliveries of IPL matches (1598 innings).
+        \end{itemize}
+      \item Statistics:
+        \begin{itemize}
+          \item Sample means and variances:
+            \[
+              \bar{X}_{0.1} = 0.73, \quad \bar{X}_{0.2} = 0.87, \quad \bar{X}_{0.3} = 0.95.
+            \]
+          \item Proportions:
+            \[
+              P(\text{dot ball}) =
+              \begin{cases}
+                0.5989, & 0.1, \\
+                0.55, & 0.2, \\
+                0.53, & 0.3.
+              \end{cases}
+            \]
+            \[
+              P(\text{boundary}) =
+              \begin{cases}
+                0.1, & 0.1, \\
+                0.1145, & 0.2, \\
+                0.13, & 0.3.
+              \end{cases}
+            \]
+        \end{itemize}
+      \item Observations:
+        \begin{itemize}
+          \item Clear trends: Runs and boundaries increase from 0.1 to 0.3.
+          \item The iid model is reasonable but may require further checks for dependencies (e.g., psychological effects on bowlers after a boundary).
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Lessons Learned:}
+    \begin{itemize}
+      \item Statistical models and conclusions depend on the dataset size, quality, and context.
+      \item Large datasets (like IPL) allow for more reliable inferences compared to smaller datasets (like Taj Mahal).
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Datasets Analyzed:}
+1. \textbf{Iris Dataset:} Modeled as iid samples; computed basic statistics.
+2. \textbf{Taj Mahal Air Quality:} Insufficient data for strong conclusions; temporal effects likely.
+3. \textbf{IPL Data:} Large dataset revealing trends; iid model reasonable with caveats.
+
+\textbf{Insights:}
+- Larger datasets provide stronger confidence in statistical stories.
+- Sample statistics offer valuable summaries but must be interpreted in context.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored sample statistics through three datasets.
+  \item Discussed the suitability of iid models for different contexts.
+  \item Highlighted the role of data size and context in statistical conclusions.
+\end{itemize}
+
+Real-world datasets illustrate the importance of understanding the assumptions and limitations behind statistical models.
+
+\end{document}

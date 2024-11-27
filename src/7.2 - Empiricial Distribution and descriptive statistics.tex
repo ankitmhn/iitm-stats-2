@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Empirical Distribution and Descriptive Statistics}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 7.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Empirical Distribution:}
+    \begin{itemize}
+      \item Computed from a set of iid samples $X_1, X_2, \dots, X_n$.
+      \item Definition:
+        \[
+          \hat{P}(t) = \frac{\#(X_i = t)}{n},
+        \]
+        where $\#(X_i = t)$ is the number of samples equal to $t$.
+      \item Represents a PMF derived directly from sample data.
+    \end{itemize}
+
+  \item \textbf{Example of Empirical Distribution:}
+    \begin{itemize}
+      \item For 20 samples: $1, 1, 0, 1, 0, \dots, 0$, range $\{0, 1\}$.
+      \item Empirical probabilities:
+        \[
+          \hat{P}(0) = \frac{8}{20}, \quad \hat{P}(1) = \frac{12}{20}.
+        \]
+      \item Another set: $1, 2, 0, 3, \dots$, range $\{0, 1, 2, 3\}$.
+      \item Probabilities:
+        \[
+          \hat{P}(0) = \frac{6}{20}, \quad \hat{P}(1) = \frac{6}{20}, \quad \hat{P}(2) = \frac{5}{20}, \quad \hat{P}(3) = \frac{3}{20}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Properties:}
+    \begin{itemize}
+      \item Changes with the sampling instance.
+      \item Depends on the actual data, not just the underlying distribution.
+      \item Is a random quantity due to the variability in samples.
+    \end{itemize}
+
+  \item \textbf{Descriptive Statistics:}
+    \begin{itemize}
+      \item Provide a summary of the empirical distribution.
+      \item Common measures:
+        \begin{itemize}
+          \item \textbf{Mean:}
+            \[
+              \bar{X} = \frac{\sum_{i=1}^n X_i}{n}.
+            \]
+          \item \textbf{Variance:}
+            \[
+              S^2 = \frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1}.
+            \]
+        \end{itemize}
+      \item Connected to the underlying distribution.
+    \end{itemize}
+
+  \item \textbf{Key Results:}
+    \begin{itemize}
+      \item Expected value of the sample mean:
+        \[
+          \mathbb{E}[\bar{X}] = \mu,
+        \]
+        where $\mu$ is the distribution mean.
+      \item Variance of the sample mean:
+        \[
+          \text{Var}(\bar{X}) = \frac{\sigma^2}{n}.
+        \]
+      \item Expected value of sample variance:
+        \[
+          \mathbb{E}[S^2] = \sigma^2.
+        \]
+    \end{itemize}
+
+  \item \textbf{Sample Proportion:}
+    \begin{itemize}
+      \item Defined for an event $A$:
+        \[
+          S(A) = \frac{\#(X_i \in A)}{n}.
+        \]
+      \item Expected value and variance:
+        \[
+          \mathbb{E}[S(A)] = P(A), \quad \text{Var}(S(A)) = \frac{P(A)(1-P(A))}{n}.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Empirical Distribution:} Derived from sample data, showing the frequency of outcomes.
+\textbf{Descriptive Statistics:} Summarize the data, including mean, variance, and proportions.
+
+\textbf{Key Insights:}
+1. Sample mean converges to the true mean as $n$ increases.
+2. Sample variance reflects the true variance.
+3. Sample proportions approximate event probabilities.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined empirical distributions and computed examples.
+  \item Connected sample mean, variance, and proportions to underlying distributions.
+  \item Highlighted their use in analyzing and understanding data.
+\end{itemize}
+
+Empirical and descriptive statistics provide simple yet powerful tools for connecting sample data to underlying distributions.
+
+\end{document}
