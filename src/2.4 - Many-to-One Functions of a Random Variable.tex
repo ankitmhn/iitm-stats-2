@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Many-to-One Functions of a Random Variable}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 2.4.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Many-to-One Functions:}
+    \begin{itemize}
+      \item A many-to-one function maps multiple values of a random variable to the same output value.
+      \item Example: $f(x) = (5 - x)^2$ for $x \in \{0, 1, 2, \dots, 10\}$.
+      \item This is unlike one-to-one functions, where each input maps to a unique output.
+    \end{itemize}
+
+  \item \textbf{Impact on PMFs:}
+    \begin{itemize}
+      \item When applying a many-to-one function to a random variable:
+        \begin{itemize}
+          \item Repeated output values occur for different input values.
+          \item Probabilities corresponding to repeated values are summed to form the new PMF.
+        \end{itemize}
+      \item Example:
+        \begin{itemize}
+          \item If $P(X = 3) = 1/11$ and $P(X = 7) = 1/11$ both map to $f(X) = 4$, then:
+            \[
+              P(f(X) = 4) = P(X = 3) + P(X = 7) = \frac{2}{11}.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Procedure for Computing PMFs for Many-to-One Functions:}
+    \begin{enumerate}
+      \item Compute the original PMF of the random variable.
+      \item Identify repeated values in the range of the function.
+      \item Add the probabilities of all input values mapping to the same output value.
+    \end{enumerate}
+
+  \item \textbf{Example Calculation: Uniform Distribution:}
+    \begin{itemize}
+      \item Original PMF: $X$ uniformly distributed over $\{0, 1, 2, \dots, 10\}$, with $P(X = x) = 1/11$.
+      \item Function: $f(X) = (5 - X)^2$.
+      \item Output values: $\{0, 1, 4, 9, 16, 25\}$.
+      \item New PMF:
+        \begin{align*}
+          P(f(X) = 0) &= P(X = 5) = \frac{1}{11}, \\
+          P(f(X) = 1) &= P(X = 4) + P(X = 6) = \frac{2}{11}, \\
+          P(f(X) = 4) &= P(X = 3) + P(X = 7) = \frac{2}{11}, \\
+          P(f(X) = 9) &= P(X = 2) + P(X = 8) = \frac{2}{11}, \\
+          P(f(X) = 16) &= P(X = 1) + P(X = 9) = \frac{2}{11}, \\
+          P(f(X) = 25) &= P(X = 0) + P(X = 10) = \frac{2}{11}.
+        \end{align*}
+    \end{itemize}
+
+  \item \textbf{Visualization and Interpretation:}
+    \begin{itemize}
+      \item Stem plots can visualize how the PMF changes under a many-to-one function.
+      \item Many-to-one functions often stretch or compress the range of the random variable and alter the PMF significantly.
+    \end{itemize}
+
+  \item \textbf{Practical Applications:}
+    \begin{itemize}
+      \item Many-to-one transformations frequently arise in practice, such as summarizing data or applying mathematical models.
+      \item Understanding how functions transform PMFs is essential for statistical modeling and data analysis.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Many-to-One Functions:}
+These functions map multiple input values to the same output, requiring probabilities for repeated outputs to be summed.
+
+\textbf{Example:}
+For $X$ uniformly distributed over $\{0, 1, \dots, 10\}$ and $f(X) = (5 - X)^2$:
+- $P(f(X) = 4) = P(X = 3) + P(X = 7) = 2/11$.
+
+\textbf{Why It Matters:}
+This transformation alters the distribution of the random variable, affecting how it is interpreted and analyzed.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explained many-to-one functions and their impact on PMFs.
+  \item Derived new PMFs for transformed random variables.
+  \item Highlighted the importance of visualization in understanding distribution changes.
+\end{itemize}
+
+These concepts are foundational for statistical modeling and practical data analysis.
+
+\end{document}

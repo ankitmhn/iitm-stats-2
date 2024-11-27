@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Minimum and Maximum of Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec2.11.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Min and Max Functions:}
+    \begin{itemize}
+      \item The minimum and maximum functions, $Z = \min(X, Y)$ and $Z = \max(X, Y)$, are common operations in probability and statistics.
+      \item These functions arise frequently in practical problems, such as tracking extremes in datasets.
+    \end{itemize}
+
+  \item \textbf{PMF of the Minimum:}
+    \begin{itemize}
+      \item For two random variables $X$ and $Y$, the PMF of $Z = \min(X, Y)$ is derived by considering the following cases:
+        \begin{enumerate}
+          \item Both $X$ and $Y$ are equal to $z$.
+          \item $X = z$ and $Y > z$.
+          \item $Y = z$ and $X > z$.
+        \end{enumerate}
+      \item The PMF is given by:
+        \[
+          P(Z = z) = P(X = z, Y = z) + P(X = z, Y > z) + P(Y = z, X > z).
+        \]
+    \end{itemize}
+
+  \item \textbf{PMF of the Maximum:}
+    \begin{itemize}
+      \item Similarly, the PMF of $Z = \max(X, Y)$ considers the cases:
+        \begin{enumerate}
+          \item Both $X$ and $Y$ are equal to $z$.
+          \item $X = z$ and $Y < z$.
+          \item $Y = z$ and $X < z$.
+        \end{enumerate}
+      \item The PMF is derived using analogous logic to the minimum case.
+    \end{itemize}
+
+  \item \textbf{Example: Minimum of Two Dice Rolls:}
+    \begin{itemize}
+      \item Experiment: Roll two dice and let $Z = \min(X, Y)$.
+      \item For $Z = 1$, all outcomes where either die shows 1 contribute:
+        \[
+          P(Z = 1) = \frac{11}{36}.
+        \]
+      \item For $Z = 2$, outcomes where the smaller value is 2:
+        \[
+          P(Z = 2) = \frac{9}{36}.
+        \]
+      \item Similar computations for $Z = 3, 4, 5, 6$ yield decreasing probabilities.
+    \end{itemize}
+
+  \item \textbf{CDF of Maximum for Independent Random Variables:}
+    \begin{itemize}
+      \item The cumulative distribution function (CDF) of $Z = \max(X, Y)$ for independent random variables simplifies:
+        \[
+          F_Z(z) = F_X(z) \cdot F_Y(z).
+        \]
+      \item This arises from independence, as $P(\max(X, Y) \leq z) = P(X \leq z, Y \leq z)$.
+    \end{itemize}
+
+  \item \textbf{CDF of Minimum:}
+    \begin{itemize}
+      \item For $Z = \min(X, Y)$, the complementary CDF is useful:
+        \[
+          P(Z > z) = P(X > z) \cdot P(Y > z),
+        \]
+        leading to:
+        \[
+          F_Z(z) = 1 - (1 - F_X(z))(1 - F_Y(z)).
+        \]
+    \end{itemize}
+
+  \item \textbf{Special Case: Minimum of Two Geometric Distributions:}
+    \begin{itemize}
+      \item For $X, Y \sim \text{Geometric}(p)$, independent:
+        \[
+          Z = \min(X, Y) \sim \text{Geometric}(2p - p^2).
+        \]
+      \item The minimum retains a geometric distribution, whereas the maximum does not.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Formulas:}
+- PMF of $\min(X, Y)$ involves cases where one variable is smaller than or equal to the other.
+- For independent variables, $F_{\max}(z) = F_X(z) \cdot F_Y(z)$ and $P(\min(X, Y) > z) = P(X > z) \cdot P(Y > z)$.
+
+\textbf{Example:}
+For two dice, $P(\min(X, Y) = 1) = \frac{11}{36}$ and $P(\min(X, Y) = 2) = \frac{9}{36}$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Derived PMFs for the minimum and maximum of two random variables.
+  \item Explored the role of independence in simplifying CDF calculations.
+  \item Highlighted special cases like geometric distributions.
+\end{itemize}
+
+Min and max functions are essential in practical probability applications and statistical analysis.
+
+\end{document}

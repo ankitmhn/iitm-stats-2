@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Distribution of the Sum of Two Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 2.8.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Overview:}
+    \begin{itemize}
+      \item The focus is on deriving the probability mass function (PMF) of a function of two random variables, particularly their sum.
+      \item Process involves two key steps:
+        \begin{enumerate}
+          \item Determine the range of possible values for $Z = X + Y$.
+          \item Sum over the contours defined by $g(x, y) = Z$ in the joint PMF.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Steps to Derive the PMF of $Z$:}
+    \begin{enumerate}
+      \item \textbf{Find the Range of $Z$:}
+        \begin{itemize}
+          \item Identify all possible values $Z$ can take based on the ranges of $X$ and $Y$.
+          \item Example: If $X, Y \in \{1, 2, 3, 4, 5, 6\}$ (as in a dice roll), then $Z = X + Y$ can range from $2$ to $12$.
+        \end{itemize}
+      \item \textbf{Sum Over Contours:}
+        \begin{itemize}
+          \item For each possible value of $Z$, identify all pairs $(x, y)$ such that $x + y = Z$.
+          \item Add the probabilities of these pairs using the joint PMF.
+          \item Visualization can aid this process, either graphically or by pattern recognition.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Example: Sum of Two Dice Rolls:}
+    \begin{itemize}
+      \item \textbf{Step 1: Range:}
+        \[
+          Z = X + Y \in \{2, 3, \dots, 12\}.
+        \]
+      \item \textbf{Step 2: Contours:}
+        \begin{itemize}
+          \item $Z = 2$: $(1, 1)$.
+          \item $Z = 3$: $(1, 2), (2, 1)$.
+          \item $Z = 4$: $(1, 3), (2, 2), (3, 1)$.
+          \item Continue for all values up to $Z = 12$.
+        \end{itemize}
+      \item Compute PMF:
+        \[
+          P(Z = z) = \frac{\text{Number of pairs } (x, y) \text{ such that } x + y = z}{36}.
+        \]
+      \item Example:
+        \[
+          P(Z = 2) = \frac{1}{36}, \quad P(Z = 3) = \frac{2}{36}, \quad P(Z = 4) = \frac{3}{36}.
+        \]
+      \item Symmetry: $P(Z = z)$ increases to a peak at $Z = 7$ and decreases symmetrically.
+    \end{itemize}
+
+  \item \textbf{Visualization:}
+    \begin{itemize}
+      \item Graphical representation involves plotting $x$ and $y$ on a grid and identifying points where $x + y = Z$.
+      \item Contours corresponding to $x + y = Z$ are diagonal lines, each containing points that contribute to $P(Z = z)$.
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item This approach generalizes to sums of variables with other distributions or continuous cases.
+      \item The method emphasizes systematic counting and pattern recognition.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+The PMF of $Z = X + Y$ is derived by summing probabilities of all pairs $(x, y)$ such that $x + y = Z$.
+
+\textbf{Example:}
+For two dice:
+- $Z = 2$: One pair $(1, 1)$, so $P(Z = 2) = \frac{1}{36}$.
+- $Z = 3$: Two pairs $(1, 2), (2, 1)$, so $P(Z = 3) = \frac{2}{36}$.
+
+\textbf{Visualization:}
+Contours represent combinations of $(x, y)$ with the same $Z$. The PMF is computed by counting points on each contour.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Discussed how to derive the PMF of the sum of two random variables.
+  \item Used examples to illustrate the process of determining the range and summing over contours.
+  \item Emphasized the role of visualization in simplifying the computation.
+\end{itemize}
+
+This method is foundational for understanding distributions of sums and other functions of random variables.
+
+\end{document}

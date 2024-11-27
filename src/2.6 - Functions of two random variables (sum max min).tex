@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Functions of Two Random Variables (Sum, Max, and Min)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 2.6.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Functions of Two Random Variables:}
+    \begin{itemize}
+      \item Expands on functions of one random variable to consider combinations of two variables.
+      \item Common functions include the sum, maximum, and minimum, which often arise in data analysis.
+    \end{itemize}
+
+  \item \textbf{Table Method for Small-Sized Examples:}
+    \begin{itemize}
+      \item For discrete random variables with few values, the table method remains effective.
+      \item Example: $X, Y \sim \text{iid Uniform}\{0, 1\}$, with $Z = X + Y$:
+        \begin{itemize}
+          \item Joint PMF table:
+            \[
+              \begin{array}{|c|c|c|c|}
+                \hline
+                (X, Y) & Z & P(X, Y) \\ \hline
+                (0, 0) & 0 & \frac{1}{4} \\
+                (0, 1) & 1 & \frac{1}{4} \\
+                (1, 0) & 1 & \frac{1}{4} \\
+                (1, 1) & 2 & \frac{1}{4} \\ \hline
+              \end{array}
+            \]
+          \item $P(Z = 0) = \frac{1}{4}, \; P(Z = 1) = \frac{1}{2}, \; P(Z = 2) = \frac{1}{4}$.
+        \end{itemize}
+      \item The method involves identifying repetitions and summing probabilities for each unique value of $Z$.
+    \end{itemize}
+
+  \item \textbf{Example for Maximum Function:}
+    \begin{itemize}
+      \item Define $Z = \max(X, Y)$ with different distributions for $X$ and $Y$.
+      \item Tabular computation includes joint PMFs and evaluations of $\max(X, Y)$.
+      \item Example:
+        \[
+          \begin{array}{|c|c|c|c|}
+            \hline
+            (X, Y) & Z & P(X, Y) \\ \hline
+            (0, 0) & 0 & \frac{1}{2} \\
+            (0, 1) & 1 & \frac{1}{4} \\
+            (1, 0) & 1 & \frac{1}{8} \\
+            (1, 1) & 1 & \frac{1}{16} \\
+            (0, 2) & 2 & \frac{1}{16} \\ \hline
+          \end{array}
+        \]
+      \item Sum probabilities for repetitions to find:
+        \[
+          P(Z = 0) = \frac{1}{2}, \quad P(Z = 1) = \frac{11}{32}, \quad P(Z = 2) = \frac{5}{32}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Challenges for Larger Examples:}
+    \begin{itemize}
+      \item When $X$ and $Y$ have many possible values, the table method becomes cumbersome.
+      \item Example: Two dice rolls produce 36 combinations, manageable but error-prone.
+      \item Larger scales, such as $X, Y \in \{1, 2, \dots, 100\}$, yield $10^4$ combinations, making tabular methods impractical.
+    \end{itemize}
+
+  \item \textbf{Next Steps for Large Scenarios:}
+    \begin{itemize}
+      \item Transition to visualization and analytical techniques.
+      \item Understanding how functions map $(X, Y)$ to specific outcomes becomes essential for simplification.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Functions of Two Variables:}
+Sum, max, and min are common operations. Small datasets can be managed with tables; larger ones require alternative methods.
+
+\textbf{Example:}
+For $X, Y \sim \text{Uniform}\{0, 1\}$ and $Z = X + Y$:
+- $P(Z = 0) = \frac{1}{4}, \; P(Z = 1) = \frac{1}{2}, \; P(Z = 2) = \frac{1}{4}$.
+
+\textbf{Challenges:}
+Tables become impractical for large datasets, necessitating smarter techniques.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Applied the table method to functions of two random variables.
+  \item Explored examples for sum and max functions.
+  \item Discussed limitations of the table method for larger datasets.
+\end{itemize}
+
+Future discussions will focus on analytical and visualization approaches for handling large-scale random variable functions.
+
+\end{document}

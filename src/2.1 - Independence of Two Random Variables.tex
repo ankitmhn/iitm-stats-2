@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Independence of Two Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec2.1.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Independence:}
+    \begin{itemize}
+      \item Two random variables $X$ and $Y$ are independent if for all events $A$ related to $X$ and $B$ related to $Y$:
+        \[
+          P(A \cap B) = P(A) \cdot P(B).
+        \]
+      \item This definition extends the concept of independence from events to random variables by using their respective probability measures.
+    \end{itemize}
+
+  \item \textbf{Joint PMF and Independence:}
+    \begin{itemize}
+      \item Two random variables $X$ and $Y$ are independent if and only if their joint PMF satisfies:
+        \[
+          f_{XY}(t_1, t_2) = f_X(t_1) \cdot f_Y(t_2), \quad \forall t_1, t_2.
+        \]
+      \item When $X$ and $Y$ are independent, conditioning does not affect their distributions:
+        \[
+          f_{X \mid Y}(t_1 \mid t_2) = f_X(t_1), \quad f_{Y \mid X}(t_2 \mid t_1) = f_Y(t_2).
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples of Independence:}
+    \begin{itemize}
+      \item \textbf{Example 1: Uniform Joint PMF:}
+        \begin{itemize}
+          \item Joint PMF: $f_{XY}(t_1, t_2) = \frac{1}{4}$ for all $t_1, t_2 \in \{0, 1\}$.
+          \item Marginal PMFs: $f_X(t_1) = f_Y(t_2) = \frac{1}{2}$.
+          \item Check: $f_{XY}(t_1, t_2) = f_X(t_1) \cdot f_Y(t_2)$.
+          \item Conclusion: $X$ and $Y$ are independent.
+        \end{itemize}
+      \item \textbf{Example 2: Dependent Case:}
+        \begin{itemize}
+          \item Joint PMF: Values deviate from the product of marginals (e.g., a zero in the joint PMF but non-zero marginals).
+          \item Example: $f_{XY}(1, 1) = 0$ but $f_X(1) > 0$ and $f_Y(1) > 0$.
+          \item Conclusion: $X$ and $Y$ are dependent.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Detecting Independence:}
+    \begin{itemize}
+      \item To verify independence, compute the joint PMF and compare it to the product of marginals for all possible values of $t_1$ and $t_2$.
+      \item Independence holds if and only if this equality is true for all combinations.
+      \item Dependency can be proven by finding a single violation of this condition.
+    \end{itemize}
+
+  \item \textbf{Practical Example: IPL Powerplay Overs:}
+    \begin{itemize}
+      \item Random variables:
+        \begin{itemize}
+          \item $X$: Total runs scored in an over.
+          \item $Y$: Number of wickets lost.
+        \end{itemize}
+      \item Independence is unlikely because runs and wickets are typically correlated (e.g., higher wickets often result in lower runs).
+      \item This needs empirical validation using data.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Independence of Random Variables:}
+$X$ and $Y$ are independent if knowing $Y$ gives no information about $X$, and vice versa.
+
+\textbf{Key Formula:}
+Independence means:
+\[
+  f_{XY}(t_1, t_2) = f_X(t_1) \cdot f_Y(t_2), \quad \forall t_1, t_2.
+\]
+
+\textbf{Example:}
+For $f_{XY}(0, 0) = \frac{1}{4}$ and $f_X(0) = \frac{1}{2}$, $f_Y(0) = \frac{1}{2}$:
+\[
+  f_{XY}(0, 0) = f_X(0) \cdot f_Y(0) = \frac{1}{4}.
+\]
+Thus, $X$ and $Y$ are independent.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined independence for random variables.
+  \item Derived the joint PMF conditions for independence.
+  \item Explored examples to distinguish independent and dependent cases.
+\end{itemize}
+
+Independence is a cornerstone of probabilistic analysis and is critical for simplifying computations and modeling real-world scenarios.
+
+\end{document}

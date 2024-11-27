@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Functions of Random Variables and Convolutions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec2.10.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Functions of Random Variables:}
+    \begin{itemize}
+      \item A function of random variables creates a new random variable. For instance:
+        \[
+          Z = g(X, Y).
+        \]
+      \item The probability mass function (PMF) of the new variable can be derived by summing the joint PMF of $X$ and $Y$ over all values that map to $Z$:
+        \[
+          P(Z = z) = \sum_{(x, y): g(x, y) = z} P(X = x, Y = y).
+        \]
+    \end{itemize}
+
+  \item \textbf{Example: Sum of Two Dice Rolls:}
+    \begin{itemize}
+      \item Let $X$ and $Y$ be results of two dice rolls.
+      \item $Z = X + Y$, and the range of $Z$ is $\{2, 3, \dots, 12\}$.
+      \item PMF:
+        \[
+          P(Z = 2) = P(X = 1, Y = 1), \quad P(Z = 3) = P(X = 1, Y = 2) + P(X = 2, Y = 1), \; \text{etc.}
+        \]
+      \item Visualization involves diagonal contours where $x + y = z$.
+    \end{itemize}
+
+  \item \textbf{Example: Area of a Rectangle:}
+    \begin{itemize}
+      \item Let $X$ and $Y$ be the length and breadth of a rectangle.
+      \item $Z = XY$ gives the area.
+      \item Compute the PMF of $Z$ using the joint PMF of $X$ and $Y$, summing probabilities for all $(x, y)$ pairs that satisfy $XY = z$.
+    \end{itemize}
+
+  \item \textbf{General Formula for Functions:}
+    \begin{itemize}
+      \item For $n$ random variables $X_1, X_2, \dots, X_n$ and a function $Z = g(X_1, X_2, \dots, X_n)$:
+        \[
+          P(Z = z) = \sum_{(x_1, x_2, \dots, x_n): g(x_1, x_2, \dots, x_n) = z} P(X_1 = x_1, X_2 = x_2, \dots, X_n = x_n).
+        \]
+    \end{itemize}
+
+  \item \textbf{Convolution: Sums of Independent Random Variables:}
+    \begin{itemize}
+      \item If $X$ and $Y$ are independent and integer-valued:
+        \[
+          P(Z = z) = \sum_{x} P(X = x) \cdot P(Y = z - x).
+        \]
+      \item This operation is called a convolution of $P(X)$ and $P(Y)$.
+    \end{itemize}
+
+  \item \textbf{Example: Sum of Poisson Random Variables:}
+    \begin{itemize}
+      \item If $X \sim \text{Poisson}(\lambda_1)$ and $Y \sim \text{Poisson}(\lambda_2)$ are independent:
+        \[
+          Z = X + Y \sim \text{Poisson}(\lambda_1 + \lambda_2).
+        \]
+    \end{itemize}
+
+  \item \textbf{Conditional Distributions:}
+    \begin{itemize}
+      \item For $Z = X + Y$, the conditional distribution of $X$ given $Z = z$ is:
+        \[
+          P(X = x \mid Z = z) = \frac{P(X = x) \cdot P(Y = z - x)}{P(Z = z)}.
+        \]
+      \item Example: For independent Poisson variables:
+        \[
+          X \mid Z = z \sim \text{Binomial}\left(z, \frac{\lambda_1}{\lambda_1 + \lambda_2}\right).
+        \]
+    \end{itemize}
+
+  \item \textbf{Functions and Independence:}
+    \begin{itemize}
+      \item If $X$ and $Y$ are independent, then $f(X)$ and $g(Y)$ are also independent for any functions $f$ and $g$.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Ideas:}
+- Functions of random variables transform distributions.
+- The PMF of a new variable is computed by summing over joint PMFs.
+- Convolution is used to compute sums of independent random variables.
+
+\textbf{Example: Convolution for Poisson Variables:}
+If $X \sim \text{Poisson}(\lambda_1)$ and $Y \sim \text{Poisson}(\lambda_2)$:
+\[
+  Z = X + Y \sim \text{Poisson}(\lambda_1 + \lambda_2).
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Derived PMFs for functions of random variables using summation.
+  \item Introduced convolution for sums of independent variables.
+  \item Highlighted applications such as Poisson sums and conditional distributions.
+\end{itemize}
+
+These concepts form the basis for analyzing complex relationships between random variables.
+
+\end{document}

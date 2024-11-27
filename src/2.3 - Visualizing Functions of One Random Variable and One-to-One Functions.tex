@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Visualizing Functions of One Random Variable and One-to-One Functions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 2.3.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Functions of Random Variables:}
+    \begin{itemize}
+      \item Functions of random variables frequently appear in statistical modeling.
+      \item Understanding how a function impacts a random variable's distribution is crucial for effective modeling.
+    \end{itemize}
+
+  \item \textbf{Visualization of PMFs:}
+    \begin{itemize}
+      \item Stem plots are a common method for visualizing probability mass functions (PMFs).
+      \item Example: For a uniform random variable $X$ on $\{0, 1, \dots, 10\}$, the PMF is:
+        \[
+          f_X(x) = \frac{1}{11}, \quad x \in \{0, 1, \dots, 10\}.
+        \]
+      \item Stem plots can also represent distributions like Binomial$(10, 0.5)$, highlighting patterns such as peak probabilities near the mean.
+    \end{itemize}
+
+  \item \textbf{One-to-One Functions:}
+    \begin{itemize}
+      \item A one-to-one function maps each input value to a unique output value.
+      \item For such functions, probabilities remain unchanged, but the values are relabeled.
+      \item Example 1: $Y = X - 5$ for $X \sim \text{Uniform}(\{0, 1, \dots, 10\})$:
+        \[
+          Y \in \{-5, -4, \dots, 5\}, \quad P(Y = y) = \frac{1}{11}.
+        \]
+      \item Example 2: $Y = 2X$ for $X \sim \text{Binomial}(10, 0.5)$:
+        \[
+          f_Y(y) = f_X(x), \quad y = 2x.
+        \]
+    \end{itemize}
+
+  \item \textbf{Impact of One-to-One Transformations:}
+    \begin{itemize}
+      \item Linear transformations such as $Y = aX + b$ result in translated or scaled PMFs.
+      \item Stem plots illustrate how transformations affect the spread and alignment of distributions.
+    \end{itemize}
+
+  \item \textbf{Monotonicity and Identification:}
+    \begin{itemize}
+      \item Monotonic functions (increasing or decreasing) are always one-to-one.
+      \item A quick test for one-to-one behavior: Check that each horizontal line intersects the function plot at most once.
+    \end{itemize}
+
+  \item \textbf{Applications of the Table Method:}
+    \begin{itemize}
+      \item Create a table of values showing $X$, $Y = f(X)$, and their probabilities.
+      \item This method simplifies calculations for transformed distributions, especially for small datasets.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Happens with One-to-One Functions?}
+These functions simply relabel the values of a random variable without altering probabilities. For example:
+- $X = 0 \to Y = -5$ under $Y = X - 5$.
+- $P(X = x) = P(Y = y)$, with $y = f(x)$.
+
+\textbf{Visualizing Transformations:}
+Stem plots help visualize how the PMF shifts or stretches under transformations.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored one-to-one functions and their effects on random variables.
+  \item Highlighted the use of stem plots for visualizing PMFs.
+  \item Discussed methods for identifying and working with one-to-one transformations.
+\end{itemize}
+
+Understanding one-to-one functions is foundational for analyzing and modeling transformed random variables.
+
+\end{document}

@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Maximum of Two Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 2.9.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to the Maximum Function:}
+    \begin{itemize}
+      \item The maximum of two random variables, $Z = \max(X, Y)$, represents the largest value between $X$ and $Y$.
+      \item This lecture focuses on $X$ and $Y$ being independent and identically distributed (i.i.d.) uniform random variables over $\{1, 2, \dots, 6\}$.
+    \end{itemize}
+
+  \item \textbf{Steps to Derive the PMF of $Z$:}
+    \begin{enumerate}
+      \item \textbf{Determine the Range of $Z$:}
+        \begin{itemize}
+          \item The range of $Z$ is $\{1, 2, \dots, 6\}$, as the maximum of two values between 1 and 6 also lies in this range.
+        \end{itemize}
+      \item \textbf{Count the Occurrences for Each Value of $Z$:}
+        \begin{itemize}
+          \item For $Z = 1$, the only possible pair is $(1, 1)$.
+          \item For $Z = 2$, possible pairs are $(2, 1)$, $(2, 2)$, and $(1, 2)$.
+          \item For $Z = 3$, possible pairs are $(3, 1)$, $(3, 2)$, $(3, 3)$, $(2, 3)$, and $(1, 3)$.
+          \item This pattern continues for higher values of $Z$.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{General Formula for PMF of $Z$:}
+    \begin{itemize}
+      \item For $Z = z$, the count of pairs $(x, y)$ satisfying $\max(x, y) = z$ is:
+        \[
+          2z - 1.
+        \]
+      \item The probability is then:
+        \[
+          P(Z = z) = \frac{2z - 1}{36}, \quad z \in \{1, 2, \dots, 6\}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Visualization of the PMF:}
+    \begin{itemize}
+      \item The PMF shows an increasing trend, with probabilities rising as $z$ increases.
+      \item Example values:
+        \[
+          P(Z = 1) = \frac{1}{36}, \quad P(Z = 2) = \frac{3}{36}, \quad P(Z = 3) = \frac{5}{36}, \quad \dots, \quad P(Z = 6) = \frac{11}{36}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Extensions:}
+    \begin{itemize}
+      \item For general $X, Y \sim \text{Uniform}\{1, 2, \dots, n\}$, the range of $Z = \max(X, Y)$ is $\{1, 2, \dots, n\}$.
+      \item The count of pairs $(x, y)$ where $\max(x, y) = z$ is $2z - 1$.
+      \item PMF:
+        \[
+          P(Z = z) = \frac{2z - 1}{n^2}, \quad z \in \{1, 2, \dots, n\}.
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Maximum Function:}
+The maximum of two random variables $X$ and $Y$ is their largest value. For i.i.d. uniform distributions:
+- Range of $Z = \{1, 2, \dots, n\}$.
+- Probability $P(Z = z) = \frac{2z - 1}{n^2}$.
+
+\textbf{Example for $n = 6$:}
+\[
+  P(Z = 1) = \frac{1}{36}, \; P(Z = 2) = \frac{3}{36}, \; P(Z = 3) = \frac{5}{36}, \dots, \; P(Z = 6) = \frac{11}{36}.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Derived the PMF of the maximum function for two uniform random variables.
+  \item Used a systematic approach to count pairs satisfying $\max(X, Y) = Z$.
+  \item Generalized the results for uniform distributions over $\{1, 2, \dots, n\}$.
+\end{itemize}
+
+Understanding the maximum function is essential for probabilistic analysis and forms the basis for studying other functions of random variables.
+
+\end{document}

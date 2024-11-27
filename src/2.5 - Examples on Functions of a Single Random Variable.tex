@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Examples on Functions of a Single Random Variable}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec 2.5.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Applying Functions to Discrete Random Variables:}
+    \begin{itemize}
+      \item The function maps values of a random variable $X$ to new values, creating a transformed variable $Y$.
+      \item A table-based method simplifies this transformation, especially for discrete variables.
+    \end{itemize}
+
+  \item \textbf{Example 1: Uniform Random Variable on $\{-5, -4, \dots, 5\}$:}
+    \begin{itemize}
+      \item $X$ is uniformly distributed over $\{-5, -4, \dots, 5\}$ with $P(X = x) = \frac{1}{11}$.
+      \item Function: $Y = f(X)$, where:
+        \[
+          f(X) =
+          \begin{cases}
+            0, & X \leq 0, \\
+            X, & X > 0.
+          \end{cases}
+        \]
+      \item Table for $Y$:
+        \[
+          \begin{array}{|c|c|}
+            \hline
+            Y & P(Y = y) \\ \hline
+            0 & \frac{6}{11} \\
+            1 & \frac{1}{11} \\
+            2 & \frac{1}{11} \\
+            3 & \frac{1}{11} \\
+            4 & \frac{1}{11} \\
+            5 & \frac{1}{11} \\ \hline
+          \end{array}
+        \]
+      \item $Y$ consolidates values of $X \leq 0$ into a single outcome ($Y = 0$).
+    \end{itemize}
+
+  \item \textbf{Example 2: Large Uniform Range on $\{-500, -499, \dots, 500\}$:}
+    \begin{itemize}
+      \item $X$ is uniformly distributed with $P(X = x) = \frac{1}{1001}$.
+      \item Function: $Y = \max(X, 5)$:
+        \[
+          f(X) =
+          \begin{cases}
+            5, & X \leq 5, \\
+            X, & X > 5.
+          \end{cases}
+        \]
+      \item Pattern in $Y$:
+        \begin{itemize}
+          \item $Y = 5$ occurs for $506$ values of $X$.
+          \item $Y = x$ for $x \in \{6, 7, \dots, 500\}$.
+        \end{itemize}
+      \item Table for $Y$:
+        \[
+          \begin{array}{|c|c|}
+            \hline
+            Y & P(Y = y) \\ \hline
+            5 & \frac{506}{1001} \\
+            6 & \frac{1}{1001} \\
+            7 & \frac{1}{1001} \\
+            \vdots & \vdots \\
+            500 & \frac{1}{1001} \\ \hline
+          \end{array}
+        \]
+    \end{itemize}
+
+  \item \textbf{Key Observations:}
+    \begin{itemize}
+      \item Using a table to represent transformations helps manage even large datasets.
+      \item Patterns in $Y$ can significantly reduce the effort needed to compute PMFs.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Transformations of Random Variables:}
+Functions like $f(X)$ consolidate or shift probabilities. Tables simplify deriving new PMFs, especially when patterns exist.
+
+\textbf{Examples:}
+- $X \sim \text{Uniform}(-5, 5)$: $f(X)$ maps $X \leq 0$ to $Y = 0$.
+- $X \sim \text{Uniform}(-500, 500)$: $f(X) = \max(X, 5)$ creates a concentrated probability at $Y = 5$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored how functions transform random variables.
+  \item Highlighted the utility of tables for summarizing transformations.
+  \item Showed how patterns simplify PMF computations for large datasets.
+\end{itemize}
+
+Understanding transformations and patterns enables efficient computation and visualization of transformed distributions.
+
+\end{document}

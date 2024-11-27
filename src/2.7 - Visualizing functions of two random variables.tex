@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Visualizing Functions of Two Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 2.7.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Visualization of Functions $g(x, y)$:}
+    \begin{itemize}
+      \item Functions of two random variables, $g(x, y)$, can be visualized in three dimensions.
+      \item A 3D plot places $x$ and $y$ on two axes, and $g(x, y)$ on the third.
+      \item While visually appealing, 3D plots are less practical for solving problems.
+    \end{itemize}
+
+  \item \textbf{Contour Plots:}
+    \begin{itemize}
+      \item Contours are 2D visualizations where $g(x, y)$ takes a constant value $c$:
+        \[
+          g(x, y) = c.
+        \]
+      \item Example for $g(x, y) = x + y$:
+        \begin{itemize}
+          \item Contours are straight lines with slope $-1$.
+          \item Lines shift based on $c$: $x + y = 0$, $x + y = 2$, $x + y = -2$.
+        \end{itemize}
+      \item Contour plots are effective for understanding regions and trends in $g(x, y)$.
+    \end{itemize}
+
+  \item \textbf{Examples of Contour Functions:}
+    \begin{itemize}
+      \item \textbf{Sum Function:} $g(x, y) = x + y$
+        \begin{itemize}
+          \item Contours are straight lines.
+          \item Each line represents combinations of $x$ and $y$ summing to $c$.
+        \end{itemize}
+      \item \textbf{Maximum Function:} $g(x, y) = \max(x, y)$
+        \begin{itemize}
+          \item Contours are L-shaped lines.
+          \item Example: $\max(x, y) = 2$ consists of:
+            \begin{itemize}
+              \item A vertical line at $x = 2$ for $y < 2$.
+              \item A horizontal line at $y = 2$ for $x < 2$.
+            \end{itemize}
+        \end{itemize}
+      \item \textbf{Minimum Function:} $g(x, y) = \min(x, y)$
+        \begin{itemize}
+          \item Contours are inverse L-shaped.
+          \item Example: $\min(x, y) = 2$ includes:
+            \begin{itemize}
+              \item A vertical line at $x = 2$ for $y > 2$.
+              \item A horizontal line at $y = 2$ for $x > 2$.
+            \end{itemize}
+        \end{itemize}
+      \item \textbf{Circle Function:} $g(x, y) = x^2 + y^2$
+        \begin{itemize}
+          \item Contours are circles with radius $\sqrt{c}$.
+          \item Inside the circle, $x^2 + y^2 \leq c$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Regions Below or Above a Value:}
+    \begin{itemize}
+      \item Visualizing regions where $g(x, y) \leq c$ or $g(x, y) \geq c$ enhances understanding.
+      \item Example for $g(x, y) = x + y \leq c$:
+        \begin{itemize}
+          \item The region below the line $x + y = c$ satisfies the inequality.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Graphing calculators (e.g., Desmos) are useful for plotting contours and regions.
+      \item These visualizations aid in understanding and analyzing distributions of two random variables.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What Are Contours?}
+Contours are lines or curves where a function $g(x, y)$ takes a constant value. For example:
+- $g(x, y) = x + y$: Contours are straight lines.
+- $g(x, y) = x^2 + y^2$: Contours are circles.
+
+\textbf{Why Use Contours?}
+They help identify patterns and relationships between $x$ and $y$, making problem-solving easier.
+
+\textbf{Example:}
+For $g(x, y) = \max(x, y)$ and $g(x, y) = 2$, the contour consists of:
+- A vertical line at $x = 2$ for $y \leq 2$.
+- A horizontal line at $y = 2$ for $x \leq 2$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced contour plots for visualizing functions of two variables.
+  \item Explored examples including sum, max, min, and circle functions.
+  \item Highlighted the utility of contours and regions for understanding distributions.
+\end{itemize}
+
+Contour visualizations are fundamental tools for analyzing and interpreting relationships in multivariable functions.
+
+\end{document}

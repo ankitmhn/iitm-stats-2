@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Independence of Multiple Random Variables and I.I.D. Case}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lec2.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Independence for Multiple Random Variables:}
+    \begin{itemize}
+      \item $n$ random variables $X_1, X_2, \dots, X_n$ are independent if:
+        \[
+          P(A_1 \cap A_2 \cap \dots \cap A_n) = P(A_1) \cdot P(A_2) \cdot \dots \cdot P(A_n),
+        \]
+        for any events $A_1, A_2, \dots, A_n$ related to $X_1, X_2, \dots, X_n$.
+      \item Alternatively, for discrete random variables, independence holds if the joint PMF factors as:
+        \[
+          f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n) = f_{X_1}(t_1) \cdot f_{X_2}(t_2) \cdot \dots \cdot f_{X_n}(t_n).
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples of Independence:}
+    \begin{itemize}
+      \item \textbf{Example 1: Tossing a Fair Coin Thrice:}
+        \begin{itemize}
+          \item Joint PMF: $f_{X_1, X_2, X_3}(t_1, t_2, t_3) = \frac{1}{8}$ for all $t_1, t_2, t_3 \in \{0, 1\}$.
+          \item Marginal PMFs: $f_{X_i}(t_i) = \frac{1}{2}$.
+          \item Check: The product of marginals equals the joint PMF, confirming independence.
+        \end{itemize}
+      \item \textbf{Example 2: Three-Digit Lottery Numbers:}
+        \begin{itemize}
+          \item Random variables:
+            \begin{itemize}
+              \item $X$: Hundreds place digit (uniform $0$ to $9$).
+              \item $Y$: Parity of the number (even or odd).
+              \item $Z$: Units place digit (uniform $0$ to $9$).
+            \end{itemize}
+          \item Observations:
+            \begin{itemize}
+              \item $X$ and $Z$ are independent, as their joint PMF equals the product of their marginals.
+              \item $Y$ and $Z$ are dependent, as certain combinations (e.g., $Y = 1$ and $Z = 2$) are impossible.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Special Case: I.I.D. Random Variables:}
+    \begin{itemize}
+      \item Independent and Identically Distributed (i.i.d.) random variables satisfy:
+        \begin{itemize}
+          \item Independence: The joint PMF factors as a product of marginals.
+          \item Identical distribution: All marginals are the same, $f_{X_i}(t) = f_X(t)$.
+        \end{itemize}
+      \item Joint PMF simplifies to:
+        \[
+          f_{X_1, X_2, \dots, X_n}(t_1, t_2, \dots, t_n) = \prod_{i=1}^n f_X(t_i).
+        \]
+    \end{itemize}
+
+  \item \textbf{Applications of I.I.D. Random Variables:}
+    \begin{itemize}
+      \item Simplifies probability calculations for complex events.
+      \item \textbf{Example: Geometric Distribution:}
+        \begin{itemize}
+          \item Let $X_1, X_2, \dots, X_n \sim \text{Geometric}(p)$ be i.i.d.
+          \item Probability that all $X_i > j$:
+            \[
+              P(X_1 > j, X_2 > j, \dots, X_n > j) = \left(P(X > j)\right)^n.
+            \]
+        \end{itemize}
+      \item \textbf{Example: Missing Value:}
+        \begin{itemize}
+          \item Let $X_i$ take values $0, 1, 2, 3, 4$ with known PMF. The probability that $X_i \neq 4$ for all $i$:
+            \[
+              P(X_1 \neq 4, X_2 \neq 4, \dots, X_n \neq 4) = \left(P(X \neq 4)\right)^n.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Memoryless Property of Geometric Distributions:}
+    \begin{itemize}
+      \item The Geometric distribution satisfies:
+        \[
+          P(X > m + n \mid X > m) = P(X > n).
+        \]
+      \item Interpretation: The future waiting time is independent of the past.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Independence:}
+Random variables are independent if the joint PMF equals the product of their marginals.
+
+\textbf{I.I.D. Random Variables:}
+Independent and identically distributed variables share the same marginal PMF and simplify computations.
+
+\textbf{Example (Geometric):}
+For $X \sim \text{Geometric}(p)$:
+\[
+  P(X_1 > j, \dots, X_n > j) = \left(P(X > j)\right)^n.
+\]
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined independence for multiple random variables.
+  \item Explored examples, including dependent and independent cases.
+  \item Introduced the i.i.d. case and discussed its practical applications.
+  \item Highlighted the memoryless property of the Geometric distribution.
+\end{itemize}
+
+Understanding independence and the i.i.d. case is essential for probabilistic modeling and statistical inference.
+
+\end{document}
