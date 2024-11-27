@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Common Continuous Distributions}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.6.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction:}
+    \begin{itemize}
+      \item This lecture introduces three common continuous distributions: Uniform, Exponential, and Normal.
+      \item These distributions are widely used in modeling practical scenarios and are essential to understand in probability theory.
+    \end{itemize}
+
+  \item \textbf{Uniform Distribution:}
+    \begin{itemize}
+      \item A random variable $X$ is uniformly distributed on $[a, b]$ if its PDF is:
+        \[
+          f_X(x) =
+          \begin{cases}
+            \frac{1}{b-a}, & a \leq x \leq b, \\
+            0, & \text{otherwise}.
+          \end{cases}
+        \]
+      \item Properties:
+        \begin{itemize}
+          \item The PDF is flat, indicating equal probability density over $[a, b]$.
+          \item CDF:
+            \[
+              F_X(x) =
+              \begin{cases}
+                0, & x < a, \\
+                \frac{x-a}{b-a}, & a \leq x \leq b, \\
+                1, & x > b.
+              \end{cases}
+            \]
+          \item Probabilities are computed as:
+            \[
+              P(a_1 \leq X \leq b_1) = \frac{b_1 - a_1}{b-a}.
+            \]
+        \end{itemize}
+      \item Example:
+        \begin{itemize}
+          \item $X \sim \text{Uniform}[-10, 10]$, PDF is $\frac{1}{20}$ for $-10 \leq X \leq 10$.
+          \item Probability of $-3 \leq X \leq 2$:
+            \[
+              P(-3 \leq X \leq 2) = \frac{5}{20} = \frac{1}{4}.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Exponential Distribution:}
+    \begin{itemize}
+      \item A random variable $X$ follows an exponential distribution with parameter $\lambda > 0$ if its PDF is:
+        \[
+          f_X(x) =
+          \begin{cases}
+            \lambda e^{-\lambda x}, & x \geq 0, \\
+            0, & x < 0.
+          \end{cases}
+        \]
+      \item Properties:
+        \begin{itemize}
+          \item The PDF decays exponentially, with most probability density near $x = 0$.
+          \item CDF:
+            \[
+              F_X(x) =
+              \begin{cases}
+                0, & x < 0, \\
+                1 - e^{-\lambda x}, & x \geq 0.
+              \end{cases}
+            \]
+        \end{itemize}
+      \item Example:
+        \begin{itemize}
+          \item $X \sim \text{Exponential}(\lambda=2)$.
+          \item Probability of $5 \leq X \leq 7$:
+            \[
+              P(5 \leq X \leq 7) = \int_5^7 2e^{-2x} \, dx = e^{-10} - e^{-14}.
+            \]
+        \end{itemize}
+      \item Memoryless Property:
+        \[
+          P(X > s + t \mid X > t) = P(X > s).
+        \]
+    \end{itemize}
+
+  \item \textbf{Normal (Gaussian) Distribution:}
+    \begin{itemize}
+      \item A random variable $X$ follows a normal distribution with mean $\mu$ and variance $\sigma^2$ if its PDF is:
+        \[
+          f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+        \]
+      \item Properties:
+        \begin{itemize}
+          \item Symmetric bell-shaped curve centered at $\mu$.
+          \item Support: $(-\infty, \infty)$.
+          \item CDF does not have a closed form, requiring numerical methods or tables.
+        \end{itemize}
+      \item Standard Normal Distribution:
+        \[
+          Z = \frac{X - \mu}{\sigma} \sim \text{Normal}(0, 1).
+        \]
+      \item Example:
+        \begin{itemize}
+          \item $X \sim \text{Normal}(\mu=2, \sigma^2=5)$.
+          \item Probability of $X < 10$:
+            \[
+              Z = \frac{10 - 2}{\sqrt{5}} \implies P(X < 10) = \Phi(3.58),
+            \]
+            where $\Phi$ is the standard normal CDF.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Three Key Distributions:}
+1. Uniform: Equal density over an interval.
+2. Exponential: Models waiting times; decays exponentially.
+3. Normal: Bell-shaped curve; central to many natural phenomena.
+
+\textbf{Applications:}
+- Uniform: Modeling equally likely outcomes (e.g., random sampling).
+- Exponential: Time until an event (e.g., bus arrival).
+- Normal: Modeling data with natural variability (e.g., heights).
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced the Uniform, Exponential, and Normal distributions.
+  \item Defined their PDFs, CDFs, and key properties.
+  \item Highlighted practical examples and computation techniques.
+\end{itemize}
+
+These distributions are fundamental in probability, appearing frequently in both theory and applications.
+
+\end{document}

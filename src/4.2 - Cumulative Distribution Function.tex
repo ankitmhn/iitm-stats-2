@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Cumulative Distribution Function (CDF)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.2.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Definition of Cumulative Distribution Function (CDF):}
+    \begin{itemize}
+      \item A CDF, denoted as $F_X(x)$, maps any real number $x$ to the interval $[0, 1]$.
+      \item Formula:
+        \[
+          F_X(x) = P(X \leq x).
+        \]
+      \item The CDF captures the probability that the random variable $X$ takes a value less than or equal to $x$.
+    \end{itemize}
+
+  \item \textbf{Properties of CDF:}
+    \begin{itemize}
+      \item $F_X(x)$ is non-decreasing:
+        \[
+          \text{If } x_1 \leq x_2, \quad F_X(x_1) \leq F_X(x_2).
+        \]
+      \item $F_X(x)$ starts at 0 as $x \to -\infty$:
+        \[
+          \lim_{x \to -\infty} F_X(x) = 0.
+        \]
+      \item $F_X(x)$ approaches 1 as $x \to \infty$:
+        \[
+          \lim_{x \to \infty} F_X(x) = 1.
+        \]
+      \item For $a < b$:
+        \[
+          P(a < X \leq b) = F_X(b) - F_X(a).
+        \]
+      \item CDFs for discrete random variables have step-like behavior, while continuous random variables have smooth, continuous CDFs.
+    \end{itemize}
+
+  \item \textbf{Example: Bernoulli Random Variable ($X \sim \text{Bernoulli}(p)$):}
+    \begin{itemize}
+      \item $X$ takes values 0 with probability $1-p$ and 1 with probability $p$.
+      \item CDF:
+        \[
+          F_X(x) =
+          \begin{cases}
+            0, & x < 0, \\
+            1 - p, & 0 \leq x < 1, \\
+            1, & x \geq 1.
+          \end{cases}
+        \]
+      \item Graph: Stepwise increase at $x = 0$ and $x = 1$, reflecting the probabilities.
+    \end{itemize}
+
+  \item \textbf{Example: Uniform Discrete Random Variable ($X \sim \text{Uniform}\{1, 2, \dots, 6\}$):}
+    \begin{itemize}
+      \item PMF: $P(X = k) = \frac{1}{6}$ for $k = 1, 2, \dots, 6$.
+      \item CDF:
+        \[
+          F_X(x) =
+          \begin{cases}
+            0, & x < 1, \\
+            \frac{k}{6}, & k \leq x < k+1 \; (k = 1, \dots, 5), \\
+            1, & x \geq 6.
+          \end{cases}
+        \]
+      \item Graph: Stepwise increases with each step size corresponding to $\frac{1}{6}$.
+    \end{itemize}
+
+  \item \textbf{Applications of CDF:}
+    \begin{itemize}
+      \item Calculating probabilities for intervals:
+        \[
+          P(a < X \leq b) = F_X(b) - F_X(a).
+        \]
+      \item Example:
+        \begin{itemize}
+          \item $X \sim \text{Uniform}\{1, \dots, 100\}$:
+            \[
+              P(3 \leq X \leq 10) = F_X(10) - F_X(3) = \frac{10}{100} - \frac{3}{100} = \frac{7}{100}.
+            \]
+          \item For non-integer values like $3.2$ or $10.6$, the CDF output corresponds to the nearest integer boundary.
+        \end{itemize}
+      \item Probability for tail events:
+        \[
+          P(X > c) = 1 - F_X(c).
+        \]
+    \end{itemize}
+
+  \item \textbf{Connecting CDF to PMF:}
+    \begin{itemize}
+      \item For discrete random variables:
+        \[
+          P(X = x) = F_X(x) - F_X(x^-),
+        \]
+        where $F_X(x^-)$ is the left-hand limit of $F_X$ at $x$.
+      \item For continuous random variables, the derivative of $F_X(x)$ yields the probability density function (PDF):
+        \[
+          f_X(x) = \frac{d}{dx}F_X(x).
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What is the CDF?}
+The cumulative distribution function describes the probability that a random variable is less than or equal to a given value:
+\[
+  F_X(x) = P(X \leq x).
+\]
+
+\textbf{Key Features:}
+- Non-decreasing.
+- Ranges from 0 to 1.
+- Stepwise for discrete variables, smooth for continuous ones.
+
+\textbf{Example:}
+For $X \sim \text{Bernoulli}(p)$:
+- $F_X(0) = 1-p$.
+- $F_X(1) = 1$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the CDF and its key properties.
+  \item Demonstrated examples with discrete random variables.
+  \item Highlighted the use of CDFs in probability calculations and their relationship to PMFs and PDFs.
+\end{itemize}
+
+CDFs are crucial for understanding and calculating probabilities in both discrete and continuous frameworks.
+
+\end{document}

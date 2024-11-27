@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: General and Continuous Random Variables}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.4.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Discrete vs Continuous Random Variables:}
+    \begin{itemize}
+      \item Discrete random variables are associated with a finite or countably infinite sample space.
+      \item Continuous random variables are defined over an interval of real numbers, simplifying modeling for large datasets.
+    \end{itemize}
+
+  \item \textbf{Continuous Random Variables:}
+    \begin{itemize}
+      \item Continuous random variables are modeled using a continuous cumulative distribution function (CDF).
+      \item A valid CDF satisfies:
+        \begin{enumerate}
+          \item Non-decreasing behavior.
+          \item Starts at 0 and ends at 1.
+          \item Is right-continuous.
+        \end{enumerate}
+    \end{itemize}
+
+  \item \textbf{Probabilities Using Continuous CDFs:}
+    \begin{itemize}
+      \item For any interval $a < X \leq b$:
+        \[
+          P(a < X \leq b) = F_X(b) - F_X(a).
+        \]
+      \item For a single value $X = c$, the probability:
+        \[
+          P(X = c) =
+          \begin{cases}
+            F_X(c) - F_X(c^-), & \text{if there is a jump at } c, \\
+            0, & \text{if } F_X(c) \text{ is continuous at } c.
+          \end{cases}
+        \]
+    \end{itemize}
+
+  \item \textbf{Defining Continuous Random Variables:}
+    \begin{itemize}
+      \item A random variable is continuous if its CDF is continuous at every point.
+      \item For continuous random variables:
+        \[
+          P(X = c) = 0 \quad \forall c.
+        \]
+    \end{itemize}
+
+  \item \textbf{Examples of CDFs:}
+    \begin{itemize}
+      \item Discrete random variable: CDF increases in jumps corresponding to probabilities of specific values.
+      \item Continuous random variable: CDF rises smoothly with no jumps.
+      \item Mixture: Combines discrete jumps and smooth increments.
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Scenarios requiring continuous random variables:
+        \begin{itemize}
+          \item Dartboard distance from the center.
+          \item Meteorite weights.
+          \item Heights or weights of humans.
+          \item Cricket bowling speeds.
+          \item Stock prices.
+        \end{itemize}
+      \item Continuous models are preferred when datasets are large and tracking every discrete value is impractical.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Concept: Continuous Random Variables}
+Continuous random variables are modeled using a smooth CDF, which simplifies probability calculations for large datasets or ranges.
+
+\textbf{Probabilities with CDFs:}
+- Interval: $P(a < X \leq b) = F_X(b) - F_X(a)$.
+- Single value: $P(X = c) = 0$ if the CDF is continuous at $c$.
+
+\textbf{Examples:}
+- Continuous: Smooth curves (e.g., bowling speeds).
+- Discrete: Stepwise jumps (e.g., die rolls).
+
+\textbf{Why Use Continuous Models?}
+- Simplifies calculations for datasets with many values.
+- Models real-world phenomena efficiently.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Distinguished between discrete, continuous, and mixed random variables.
+  \item Defined continuous random variables through their CDFs.
+  \item Applied CDFs to compute probabilities for different events.
+  \item Highlighted the importance of continuous models in practical scenarios.
+\end{itemize}
+
+Continuous random variables form a crucial foundation for advanced probability modeling, simplifying calculations and enhancing applicability.
+
+\end{document}

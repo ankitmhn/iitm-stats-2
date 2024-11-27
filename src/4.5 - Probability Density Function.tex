@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Probability Density Function (PDF)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Source: Lecture 4.5.docx}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Motivation for the PDF:}
+    \begin{itemize}
+      \item In continuous random variables, the probability mass function (PMF) is replaced by the probability density function (PDF).
+      \item A PDF describes the "density" of a random variable over an interval rather than specific probabilities at individual points.
+    \end{itemize}
+
+  \item \textbf{Definition of PDF:}
+    \begin{itemize}
+      \item If $X$ is a continuous random variable with CDF $F_X(x)$, then its PDF $f_X(x)$ is defined as:
+        \[
+          f_X(x) = \frac{d}{dx}F_X(x).
+        \]
+      \item The CDF is obtained from the PDF by integration:
+        \[
+          F_X(x) = \int_{-\infty}^x f_X(t) \, dt.
+        \]
+    \end{itemize}
+
+  \item \textbf{Key Properties of PDF:}
+    \begin{itemize}
+      \item $f_X(x) \geq 0$ for all $x$.
+      \item The total integral of $f_X(x)$ over its support equals 1:
+        \[
+          \int_{-\infty}^\infty f_X(x) \, dx = 1.
+        \]
+      \item The PDF may exceed 1, but it represents probability density per unit length, not the probability itself.
+    \end{itemize}
+
+  \item \textbf{Using the PDF for Probabilities:}
+    \begin{itemize}
+      \item The probability of $X$ falling within an interval $[a, b]$ is given by:
+        \[
+          P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.
+        \]
+      \item For any specific value $c$, $P(X = c) = 0$ for continuous random variables.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{itemize}
+      \item \textbf{Uniform Distribution:}
+        \begin{itemize}
+          \item $f_X(x) = \frac{1}{5}$ for $x \in [0, 5]$, $0$ otherwise.
+          \item Probability $P(1 \leq X \leq 3)$:
+            \[
+              P(1 \leq X \leq 3) = \int_1^3 \frac{1}{5} \, dx = \frac{2}{5}.
+            \]
+        \end{itemize}
+
+      \item \textbf{Triangular Distribution:}
+        \begin{itemize}
+          \item $f_X(x) = 2x$ for $x \in [0, 1]$, $0$ otherwise.
+          \item Verify PDF: Check that $\int_0^1 2x \, dx = 1$.
+          \item Probability $P(0.1 \leq X \leq 0.3)$:
+            \[
+              P(0.1 \leq X \leq 0.3) = \int_{0.1}^{0.3} 2x \, dx = \left[ x^2 \right]_{0.1}^{0.3} = 0.09 - 0.01 = 0.08.
+            \]
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Importance of PDF Over CDF:}
+    \begin{itemize}
+      \item While the CDF describes cumulative probabilities, the PDF provides a direct view of the distribution's shape and density.
+      \item Example: For a bell curve (normal distribution), the PDF highlights the peak around the mean and symmetry, which is harder to deduce from the CDF.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{What is a PDF?}
+The PDF describes the "density" of a random variable across its range. It replaces the PMF for continuous variables, focusing on intervals instead of specific points.
+
+\textbf{Key Formulae:}
+- Probability over an interval:
+\[
+  P(a \leq X \leq b) = \int_a^b f_X(x) \, dx.
+\]
+- CDF to PDF:
+\[
+  f_X(x) = \frac{d}{dx}F_X(x).
+\]
+- PDF to CDF:
+\[
+  F_X(x) = \int_{-\infty}^x f_X(t) \, dt.
+\]
+
+\textbf{Examples:}
+1. Uniform: $f_X(x) = \frac{1}{5}$ for $x \in [0, 5]$.
+2. Triangular: $f_X(x) = 2x$ for $x \in [0, 1]$.
+
+\textbf{Why Use PDFs?}
+- PDFs offer a clear picture of distribution and density, enabling straightforward calculation of probabilities over intervals.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined the PDF and its relation to the CDF.
+  \item Explored properties and practical use of PDFs for probability calculations.
+  \item Illustrated examples of common distributions.
+\end{itemize}
+
+The PDF is an essential tool in continuous probability, offering an intuitive and powerful way to analyze distributions.
+
+\end{document}
