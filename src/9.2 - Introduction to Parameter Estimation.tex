@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Parameter Estimation - Concepts and Examples}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.2 - Introduction to Parameter Estimation}
+\section*{Source: Lec8.2.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Parameter Estimation:}
+    \begin{itemize}
+      \item Parameter estimation is a procedure to determine unknown parameters in a statistical model using data samples.
+      \item Involves identifying a function (estimator) that derives the parameter from iid samples.
+    \end{itemize}
+
+  \item \textbf{Examples of Parameter Estimation:}
+    \begin{enumerate}
+      \item \textbf{Bernoulli Trials:}
+        \begin{itemize}
+          \item Samples: $X_1, X_2, \dots, X_n \sim \text{Bernoulli}(p)$.
+          \item Goal: Estimate the success probability $p$ from observed data.
+          \item Example Data: $1, 0, 0, 1, 0, 1, 1, 1, 0, 0$ (10 samples).
+          \item Larger sample sizes (e.g., 500 samples) improve confidence in the estimate.
+        \end{itemize}
+
+      \item \textbf{Radioactive Decay (Poisson Distribution):}
+        \begin{itemize}
+          \item Model: Number of alpha particles emitted in a fixed time follows $\text{Poisson}(\lambda)$.
+          \item $\lambda$ depends on the radioactive substance (e.g., uranium, plutonium).
+          \item Data: Observations of particle counts over 2700 intervals.
+          \item Goal: Estimate $\lambda$ from the observed counts.
+        \end{itemize}
+
+      \item \textbf{Electronic Noise (Gaussian Distribution):}
+        \begin{itemize}
+          \item Model: Noise in voltage or current follows $N(\mu, \sigma^2)$.
+          \item Data: Repeated iid measurements of voltage (e.g., $1.07, 0.91, 0.88$).
+          \item Goal: Estimate $\mu$ and $\sigma^2$ from the measurements.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Estimation Process:}
+    \begin{itemize}
+      \item Estimation involves finding a function (estimator) $\hat{\theta}$ that maps samples to an estimate of the parameter $\theta$.
+      \item Example for Bernoulli trials:
+        \[
+          \hat{p} = \frac{X_1 + X_2 + \cdots + X_n}{n}.
+        \]
+    \end{itemize}
+
+  \item \textbf{Estimator Properties:}
+    \begin{itemize}
+      \item The parameter $\theta$ is a constant, but the estimator $\hat{\theta}$ is a random variable dependent on the samples.
+      \item Different sample realizations produce different estimates.
+      \item Good estimators provide values close to $\theta$ with high probability.
+    \end{itemize}
+
+  \item \textbf{Illustrative Example:}
+    \begin{itemize}
+      \item Estimators for Bernoulli($p$):
+        \begin{enumerate}
+          \item $\hat{p}_1 = \frac{1}{2}$ (ignores samples).
+          \item $\hat{p}_2 = \frac{X_1 + X_2}{2}$ (uses only two samples).
+          \item $\hat{p}_3 = \frac{\sum_{i=1}^n X_i}{n}$ (uses all samples).
+        \end{enumerate}
+      \item $\hat{p}_3$ is more effective as it incorporates all available data.
+    \end{itemize}
+
+  \item \textbf{Goals of Parameter Estimation:}
+    \begin{itemize}
+      \item Design estimators whose distributions are concentrated around the true parameter.
+      \item Provide guarantees on the estimator's performance (e.g., bias, variance).
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Parameter estimation uses sample data to approximate unknown parameters in a statistical model.
+
+\textbf{Examples:}
+1. Estimating $p$ in Bernoulli trials.
+2. Finding $\lambda$ in radioactive decay models.
+3. Determining $\mu$ and $\sigma^2$ for electronic noise.
+
+\textbf{Key Insight:}
+Good estimators make full use of sample data to provide reliable approximations of the true parameter.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced parameter estimation as a core statistical procedure.
+  \item Explored real-world examples involving Bernoulli, Poisson, and Gaussian distributions.
+  \item Discussed the design and properties of estimators.
+\end{itemize}
+
+Understanding parameter estimation is foundational for statistical modeling and inference.
+
+\end{document}

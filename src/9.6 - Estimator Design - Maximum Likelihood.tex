@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Maximum Likelihood Estimation (MLE)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.6 - Estimator Design - Maximum Likelihood}
+\section*{Source: Lecture 8.6.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Maximum Likelihood:}
+    \begin{itemize}
+      \item MLE is a method for estimating parameters of a distribution by maximizing the likelihood function.
+      \item The likelihood represents how probable the observed data is, given the parameter values.
+      \item MLE uses the assumption that the data are iid samples.
+    \end{itemize}
+
+  \item \textbf{Likelihood Function:}
+    \begin{itemize}
+      \item For iid samples $X_1, X_2, \dots, X_n$, with PDF or PMF $f_X(x; \theta)$, the likelihood function is:
+        \[
+          L(\theta) = \prod_{i=1}^n f_X(x_i; \theta).
+        \]
+      \item Example:
+        \begin{itemize}
+          \item For $X \sim N(\mu, \sigma^2)$, $L(\mu, \sigma) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i-\mu)^2}{2\sigma^2}}$.
+        \end{itemize}
+      \item The likelihood is a function of the parameters $\theta$ and not the data.
+    \end{itemize}
+
+  \item \textbf{Log-Likelihood:}
+    \begin{itemize}
+      \item Instead of maximizing $L(\theta)$, maximize $\log L(\theta)$ (simplifies calculations):
+        \[
+          \log L(\theta) = \sum_{i=1}^n \log f_X(x_i; \theta).
+        \]
+      \item Log transformation converts products to sums, making differentiation easier.
+    \end{itemize}
+
+  \item \textbf{MLE Procedure:}
+    \begin{enumerate}
+      \item Write the likelihood function $L(\theta)$.
+      \item Take the logarithm to get $\log L(\theta)$.
+      \item Differentiate $\log L(\theta)$ with respect to $\theta$.
+      \item Set the derivative to zero and solve for $\theta$.
+      \item Verify that the solution maximizes the likelihood.
+    \end{enumerate}
+
+  \item \textbf{Examples:}
+    \begin{enumerate}
+      \item \textbf{Bernoulli($p$):}
+        \begin{itemize}
+          \item Likelihood:
+            \[
+              L(p) = p^w (1-p)^{n-w},
+            \]
+            where $w$ is the number of successes.
+          \item Log-likelihood:
+            \[
+              \log L(p) = w \log p + (n-w) \log (1-p).
+            \]
+          \item MLE:
+            \[
+              \hat{p}_{\text{MLE}} = \frac{w}{n}.
+            \]
+        \end{itemize}
+
+      \item \textbf{Normal($\mu, \sigma^2$):}
+        \begin{itemize}
+          \item Likelihood:
+            \[
+              L(\mu, \sigma) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i-\mu)^2}{2\sigma^2}}.
+            \]
+          \item Log-likelihood:
+            \[
+              \log L(\mu, \sigma) = -\frac{n}{2} \log (2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2.
+            \]
+          \item MLE:
+            \[
+              \hat{\mu}_{\text{MLE}} = \bar{x}, \quad \hat{\sigma}^2_{\text{MLE}} = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2.
+            \]
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Key Properties of MLE:}
+    \begin{itemize}
+      \item \textbf{Consistency:} As $n \to \infty$, the MLE converges to the true parameter value.
+      \item \textbf{Asymptotic Normality:} For large $n$, the MLE is approximately normal.
+      \item \textbf{Efficiency:} MLE achieves the lowest possible variance among unbiased estimators (under certain conditions).
+    \end{itemize}
+
+  \item \textbf{Applications:}
+    \begin{itemize}
+      \item Bernoulli trials: Estimating success probability.
+      \item Normal distribution: Estimating mean and variance.
+      \item Broad applicability in statistical modeling and machine learning.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+MLE finds parameter values that make the observed data most likely.
+
+\textbf{Steps:}
+1. Define the likelihood function.
+2. Take the log of the likelihood.
+3. Differentiate, set to zero, and solve for parameters.
+
+\textbf{Examples:}
+- For Bernoulli trials, $\hat{p} = \frac{\text{successes}}{\text{total trials}}$.
+- For normal data, $\hat{\mu} = \text{mean}$, $\hat{\sigma}^2 = \text{variance}$.
+
+\textbf{Why It Matters:}
+MLE is widely used for parameter estimation due to its theoretical soundness and practicality.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined MLE and its key concepts.
+  \item Demonstrated its application to Bernoulli and normal distributions.
+  \item Highlighted its properties and significance in statistical analysis.
+\end{itemize}
+
+MLE is a cornerstone of statistical inference, enabling robust parameter estimation across diverse applications.
+
+\end{document}

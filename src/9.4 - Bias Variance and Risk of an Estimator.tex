@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Bias, Variance, and Risk of Estimators}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.4 - Bias, Variance, and Risk of an Estimator}
+\section*{Source: Lecture 8.4.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Point Estimation Problem:}
+    \begin{itemize}
+      \item Given iid samples from a distribution described by a parameter $\theta$, the goal is to estimate $\theta$.
+      \item Estimators are functions of the samples that provide an approximation of $\theta$.
+    \end{itemize}
+
+  \item \textbf{Bias of an Estimator:}
+    \begin{itemize}
+      \item Definition:
+        \[
+          \text{Bias}(\hat{\theta}, \theta) = \mathbb{E}[\hat{\theta}] - \theta.
+        \]
+      \item Intuition:
+        \begin{itemize}
+          \item Measures how far the expected value of the estimator is from the true parameter.
+          \item An unbiased estimator has $\text{Bias} = 0$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Variance of an Estimator:}
+    \begin{itemize}
+      \item Definition:
+        \[
+          \text{Var}(\hat{\theta}) = \mathbb{E}[(\hat{\theta} - \mathbb{E}[\hat{\theta}])^2].
+        \]
+      \item Intuition:
+        \begin{itemize}
+          \item Describes the spread of the estimator's distribution.
+          \item A low variance ensures consistency in estimates across different samples.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Risk of an Estimator:}
+    \begin{itemize}
+      \item Squared Error Risk:
+        \[
+          R(\hat{\theta}, \theta) = \mathbb{E}[(\hat{\theta} - \theta)^2].
+        \]
+      \item Alternate Terminology:
+        \begin{itemize}
+          \item Also known as Mean Squared Error (MSE).
+        \end{itemize}
+      \item Components:
+        \[
+          R(\hat{\theta}, \theta) = \text{Bias}^2 + \text{Var}(\hat{\theta}).
+        \]
+    \end{itemize}
+
+  \item \textbf{Bias-Variance Tradeoff:}
+    \begin{itemize}
+      \item To minimize risk:
+        \begin{itemize}
+          \item Reduce bias (ensure $\mathbb{E}[\hat{\theta}] \approx \theta$).
+          \item Control variance (ensure estimates are consistent).
+        \end{itemize}
+      \item Tradeoff arises because reducing bias may increase variance and vice versa.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{enumerate}
+      \item \textbf{Estimator 1: $\hat{\theta}_1 = \frac{1}{2}$ (Constant)}
+        \begin{itemize}
+          \item Bias: $\frac{1}{2} - \theta$.
+          \item Variance: 0 (constant value).
+          \item Risk: $(\frac{1}{2} - \theta)^2$.
+        \end{itemize}
+
+      \item \textbf{Estimator 2: $\hat{\theta}_2 = \frac{X_1 + X_2}{2}$ (Two Samples)}
+        \begin{itemize}
+          \item Bias: $0$ (unbiased).
+          \item Variance: $\frac{p(1-p)}{2}$.
+          \item Risk: $\frac{p(1-p)}{2}$.
+        \end{itemize}
+
+      \item \textbf{Estimator 3: $\hat{\theta}_3 = \frac{\sum_{i=1}^n X_i}{n}$ (Sample Mean)}
+        \begin{itemize}
+          \item Bias: $0$ (unbiased).
+          \item Variance: $\frac{p(1-p)}{n}$.
+          \item Risk: $\frac{p(1-p)}{n}$.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Key Insights:}
+    \begin{itemize}
+      \item Estimator $\hat{\theta}_3$ outperforms others because its risk decreases with $n$, ensuring better accuracy with larger sample sizes.
+      \item Adjustments to estimators (e.g., scaling terms) may alter bias, variance, and risk significantly.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Estimators should have low bias, variance, and risk to reliably approximate the parameter $\theta$.
+
+\textbf{Why It Matters:}
+Bias and variance directly affect an estimator's accuracy, and their relationship highlights tradeoffs in estimation design.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Defined and analyzed bias, variance, and risk for parameter estimators.
+  \item Explored their relationships through the Bias-Variance decomposition.
+  \item Demonstrated calculations for common estimators in Bernoulli trials.
+\end{itemize}
+
+Understanding these concepts is essential for evaluating and designing effective statistical estimators.
+
+\end{document}

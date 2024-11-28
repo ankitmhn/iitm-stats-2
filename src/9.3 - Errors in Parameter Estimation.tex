@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Errors in Parameter Estimation}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.3 - Errors in Parameter Estimation}
+\section*{Source: Lec8.3.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{The Parameter Estimation Problem:}
+    \begin{itemize}
+      \item Estimation involves deriving an unknown parameter $\theta$ from iid samples $X_1, X_2, \dots, X_n$.
+      \item The parameter $\theta$ is fixed, but the estimator $\hat{\theta}$ is a random variable with its own distribution.
+      \item A good estimator produces errors that are small and close to zero.
+    \end{itemize}
+
+  \item \textbf{Error in Estimation:}
+    \begin{itemize}
+      \item Error is defined as:
+        \[
+          \text{Error} = \hat{\theta}(X_1, \dots, X_n) - \theta.
+        \]
+      \item The error is a random variable, and its absolute value should ideally remain small.
+      \item A mathematical approach to controlling error:
+        \[
+          P(|\text{Error}| > \delta) \text{ should be small, where } \delta \text{ is a threshold.}
+        \]
+      \item The choice of $\delta$ is context-dependent and often relative to the magnitude of $\theta$.
+    \end{itemize}
+
+  \item \textbf{Relative Error Thresholds:}
+    \begin{itemize}
+      \item Errors should be characterized as a fraction of the parameter being estimated.
+      \item For example:
+        \begin{itemize}
+          \item For Bernoulli($p$): $|\text{Error}| \leq p / 10$ (10\% error relative to $p$).
+          \item For Normal($\mu, \sigma^2$): Error relative to $\mu$ varies with scale.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Comparing Estimators:}
+    \begin{itemize}
+      \item Three estimators for $p$ in Bernoulli trials were evaluated:
+        \begin{enumerate}
+          \item $\hat{p}_1 = 0.5$ (fixed).
+          \item $\hat{p}_2 = \frac{X_1 + X_2}{2}$ (uses only the first two samples).
+          \item $\hat{p}_3 = \frac{\sum_{i=1}^n X_i}{n}$ (sample mean).
+        \end{enumerate}
+      \item Observations:
+        \begin{itemize}
+          \item $\hat{p}_1$ is constant and does not adapt to $p$.
+          \item $\hat{p}_2$ adapts but has high variability.
+          \item $\hat{p}_3$ uses all samples, balances adaptability and stability, and shows the best performance.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Chebyshev's Inequality in Estimation:}
+    \begin{itemize}
+      \item Chebyshev's bound on error:
+        \[
+          P(|\text{Error}| > \delta) \leq \frac{\text{Var}(\text{Error})}{\delta^2}.
+        \]
+      \item For $\hat{p}_3$:
+        \begin{itemize}
+          \item $\mathbb{E}[\text{Error}] = 0$ (unbiased).
+          \item $\text{Var}(\text{Error}) = \frac{p(1-p)}{n}$.
+          \item Probability bound for $|\text{Error}| > p/10$:
+            \[
+              P(|\text{Error}| > p/10) \leq \frac{100(1-p)}{n p}.
+            \]
+        \end{itemize}
+      \item As $n \to \infty$, $P(|\text{Error}| > \delta) \to 0$, demonstrating the estimator's performance improvement with more samples.
+    \end{itemize}
+
+  \item \textbf{Key Insights:}
+    \begin{itemize}
+      \item Good estimators adapt to the parameter and leverage all available data.
+      \item Increasing the sample size reduces error variance and improves reliability.
+      \item Concentration results like Chebyshev's and Chernoff bounds highlight how probabilities of large errors diminish with more samples.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+Errors in parameter estimation should be small and decrease as the sample size increases.
+
+\textbf{Comparison of Estimators:}
+- $\hat{p}_3$ (sample mean) is effective because it uses all samples, adapts to $p$, and reduces error variance as $n$ grows.
+
+\textbf{Why It Matters:}
+Accurate estimators provide reliable parameter estimates for decision-making and data analysis.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Explored how errors in parameter estimation are characterized and controlled.
+  \item Evaluated the performance of different estimators for Bernoulli($p$).
+  \item Used Chebyshev's inequality to quantify error probabilities.
+\end{itemize}
+
+The concepts discussed are foundational for designing effective estimators that leverage data efficiently while minimizing estimation errors.
+
+\end{document}

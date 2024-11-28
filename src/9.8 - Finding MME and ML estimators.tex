@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Comparison of MME and MLE Across Examples}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.8 - Finding MME and ML Estimators}
+\section*{Source: Lec8.8.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Objective:}
+    \begin{itemize}
+      \item Compare Method of Moments Estimation (MME) and Maximum Likelihood Estimation (MLE) across various distributions.
+      \item Highlight similarities, differences, and challenges in their application.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{enumerate}
+      \item \textbf{Exponential Distribution:}
+        \begin{itemize}
+          \item PDF:
+            \[
+              f_X(x; \lambda) = \lambda e^{-\lambda x}, \quad x > 0.
+            \]
+          \item MME:
+            \[
+              \hat{\lambda}_{\text{MME}} = \frac{1}{\bar{X}}.
+            \]
+          \item MLE:
+            \[
+              \hat{\lambda}_{\text{MLE}} = \frac{1}{\bar{X}}.
+            \]
+          \item Observation: Both methods yield the same estimator due to the simplicity of the distribution.
+        \end{itemize}
+
+      \item \textbf{Discrete Distribution with Values $\{1, 2, 3\}$:}
+        \begin{itemize}
+          \item Probabilities: $p_1$, $p_2$, $p_3$ with $p_1 + p_2 + p_3 = 1$.
+          \item MME:
+            \begin{itemize}
+              \item Two sample moment equations solve for $p_1$ and $p_2$, with $p_3 = 1 - p_1 - p_2$.
+            \end{itemize}
+          \item MLE:
+            \[
+              \hat{p}_i = \frac{\text{Count of } i \text{ in samples}}{n}, \quad i = 1, 2, 3.
+            \]
+          \item Observation: MLE provides intuitive and simpler solutions compared to MME, which involves solving nonlinear equations.
+        \end{itemize}
+
+      \item \textbf{Uniform Distribution $[0, \theta]$:}
+        \begin{itemize}
+          \item MME:
+            \[
+              \hat{\theta}_{\text{MME}} = 2\bar{X}.
+            \]
+          \item MLE:
+            \[
+              \hat{\theta}_{\text{MLE}} = \max(X_1, X_2, \dots, X_n).
+            \]
+          \item Observation: MME can produce unrealistic results (e.g., $\hat{\theta} < \max(X_i)$), whereas MLE aligns with the observed data.
+        \end{itemize}
+
+      \item \textbf{Gamma Distribution:}
+        \begin{itemize}
+          \item PDF involves parameters $\alpha$ and $\beta$.
+          \item MME:
+            \begin{itemize}
+              \item Closed-form solutions relate moments to parameters.
+            \end{itemize}
+          \item MLE:
+            \begin{itemize}
+              \item Requires solving equations numerically, as closed-form expressions are unavailable.
+            \end{itemize}
+          \item Observation: MME is simpler to compute, while MLE requires computational tools.
+        \end{itemize}
+
+      \item \textbf{Binomial Distribution ($N, p$):}
+        \begin{itemize}
+          \item MLE for $p$:
+            \[
+              \hat{p} = \frac{\text{Number of successes}}{n}.
+            \]
+          \item MLE for $N$ (if unknown):
+            \begin{itemize}
+              \item Solving for $N$ involves optimizing a likelihood function, which is complex.
+            \end{itemize}
+          \item Observation: When both $N$ and $p$ are unknown, MLE can become computationally intensive.
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{General Observations:}
+    \begin{itemize}
+      \item MME is often computationally simpler but may lack intuitive alignment with data.
+      \item MLE provides estimators that maximize data likelihood, offering consistency and efficiency but can involve complex calculations.
+      \item In cases like uniform and discrete distributions, MLE often yields more intuitive results compared to MME.
+      \item For complex distributions (e.g., Gamma, Binomial with unknown $N$), numerical methods are required for MLE.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+MME equates sample moments to theoretical moments, while MLE maximizes the likelihood of observed data.
+
+\textbf{Examples:}
+- For exponential distributions, both MME and MLE yield the same estimator.
+- For uniform and discrete distributions, MLE often provides simpler and more realistic estimators.
+
+\textbf{Why It Matters:}
+Understanding these methods helps choose the appropriate estimation technique based on the distribution and computational resources.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Compared MME and MLE across a range of distributions.
+  \item Highlighted cases where MME and MLE align or diverge.
+  \item Discussed practical challenges in applying MLE to complex distributions.
+\end{itemize}
+
+Both MME and MLE have their strengths and weaknesses, and the choice depends on the specific problem and computational feasibility.
+
+\end{document}

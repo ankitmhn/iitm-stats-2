@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Evaluation of Maximum Likelihood Estimators (MLE)}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.7 - Evaluation of Maximum Likelihood Estimators (MLE)}
+\section*{Source: Lec8.7.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{MLE for Poisson Distribution:}
+    \begin{itemize}
+      \item PMF of Poisson:
+        \[
+          f_X(x; \lambda) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x \in \{0, 1, 2, \dots\}.
+        \]
+      \item Likelihood for $n$ samples:
+        \[
+          L(\lambda) = \prod_{i=1}^n \frac{e^{-\lambda} \lambda^{x_i}}{x_i!}.
+        \]
+      \item Simplification (ignoring constants not dependent on $\lambda$):
+        \[
+          L(\lambda) \propto e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i}.
+        \]
+      \item Log-likelihood:
+        \[
+          \log L(\lambda) = -n\lambda + \left(\sum_{i=1}^n x_i\right) \log \lambda.
+        \]
+      \item MLE for $\lambda$:
+        \[
+          \hat{\lambda}_{\text{MLE}} = \frac{\sum_{i=1}^n x_i}{n},
+        \]
+        which matches the sample mean and also agrees with the Method of Moments Estimator (MME).
+    \end{itemize}
+
+  \item \textbf{MLE for Normal Distribution:}
+    \begin{itemize}
+      \item PDF of Normal:
+        \[
+          f_X(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}.
+        \]
+      \item Likelihood for $n$ samples:
+        \[
+          L(\mu, \sigma^2) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_i-\mu)^2}{2\sigma^2}}.
+        \]
+      \item Log-likelihood (ignoring constants):
+        \[
+          \log L(\mu, \sigma^2) = -\frac{n}{2} \log \sigma^2 - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \mu)^2.
+        \]
+      \item MLE for $\mu$:
+        \[
+          \hat{\mu}_{\text{MLE}} = \frac{1}{n} \sum_{i=1}^n x_i = \bar{x}.
+        \]
+      \item MLE for $\sigma^2$:
+        \[
+          \hat{\sigma}^2_{\text{MLE}} = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2,
+        \]
+        which differs slightly from the sample variance formula (division by $n-1$).
+    \end{itemize}
+
+  \item \textbf{General Observations on MLE:}
+    \begin{itemize}
+      \item \textbf{Advantages:}
+        \begin{itemize}
+          \item Provides estimators that maximize the likelihood of observed data.
+          \item Often agrees with MME for common distributions (e.g., Poisson, Normal).
+          \item Consistent and asymptotically normal.
+        \end{itemize}
+      \item \textbf{Challenges:}
+        \begin{itemize}
+          \item Requires knowledge of the underlying distribution.
+          \item Involves calculus (differentiation and solving equations) which can be non-trivial for complex models.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+MLE finds parameter values that make the observed data most likely, using the likelihood function.
+
+\textbf{Examples:}
+- For Poisson, $\hat{\lambda} = \text{sample mean}$.
+- For Normal, $\hat{\mu} = \text{sample mean}$, $\hat{\sigma}^2 = \frac{\text{sum of squared deviations}}{n}$.
+
+\textbf{Insights:}
+- MLE often aligns with MME but provides a formal likelihood-based foundation.
+- As sample size grows, MLE becomes more accurate and reliable.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Applied MLE to Poisson and Normal distributions.
+  \item Discussed the recipe for deriving MLE, including simplifications and maximization steps.
+  \item Highlighted the similarities and differences between MLE and MME.
+\end{itemize}
+
+MLE is a powerful and widely-used method for parameter estimation, balancing theoretical rigor with practical applicability.
+
+\end{document}

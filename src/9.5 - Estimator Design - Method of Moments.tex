@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Lecture Summary: Estimator Design Approach - Method of Moments}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture: 9.5 - Estimator Design Approach - Method of Moments}
+\section*{Source: Lec8.5.pdf}
+
+\section*{Key Points}
+
+\begin{itemize}
+  \item \textbf{Introduction to Method of Moments:}
+    \begin{itemize}
+      \item A simple and widely used approach for designing estimators.
+      \item Relies on equating sample moments to distribution moments to solve for parameters.
+    \end{itemize}
+
+  \item \textbf{Moments and Parameters:}
+    \begin{itemize}
+      \item Moments are expectations of powers of the random variable, e.g., $\mathbb{E}[X]$, $\mathbb{E}[X^2]$.
+      \item Distribution moments are expressed as functions of parameters of the distribution.
+      \item Example distributions:
+        \begin{itemize}
+          \item Bernoulli($p$): $\mathbb{E}[X] = p$.
+          \item Poisson($\lambda$): $\mathbb{E}[X] = \lambda$.
+          \item Exponential($\lambda$): $\mathbb{E}[X] = \frac{1}{\lambda}$.
+          \item Normal($\mu, \sigma^2$): $\mathbb{E}[X] = \mu$, $\mathbb{E}[X^2] = \sigma^2 + \mu^2$.
+          \item Gamma($\alpha, \beta$): $\mathbb{E}[X] = \frac{\alpha}{\beta}$, $\mathbb{E}[X^2] = \frac{\alpha + \beta}{\beta^2}$.
+        \end{itemize}
+    \end{itemize}
+
+  \item \textbf{Sample Moments:}
+    \begin{itemize}
+      \item For $n$ iid samples, the $k$th sample moment is:
+        \[
+          M_k = \frac{1}{n} \sum_{i=1}^n X_i^k.
+        \]
+      \item Sample moments are random variables and converge to their corresponding distribution moments as $n \to \infty$ (by the Weak Law of Large Numbers).
+    \end{itemize}
+
+  \item \textbf{Method of Moments Procedure:}
+    \begin{itemize}
+      \item Replace distribution moments with sample moments.
+      \item Solve the resulting equations for the parameters.
+      \item Example with one parameter:
+        \[
+          \mathbb{E}[X] = g(\theta) \quad \to \quad M_1 = g(\hat{\theta}),
+        \]
+        where $\hat{\theta}$ is the method of moments estimator.
+    \end{itemize}
+
+  \item \textbf{Examples:}
+    \begin{enumerate}
+      \item \textbf{Bernoulli($p$):}
+        \begin{itemize}
+          \item $\mathbb{E}[X] = p$.
+          \item Method of Moments Estimator:
+            \[
+              \hat{p} = M_1 = \frac{1}{n} \sum_{i=1}^n X_i.
+            \]
+        \end{itemize}
+
+      \item \textbf{Poisson($\lambda$):}
+        \begin{itemize}
+          \item $\mathbb{E}[X] = \lambda$.
+          \item Method of Moments Estimator:
+            \[
+              \hat{\lambda} = M_1 = \frac{1}{n} \sum_{i=1}^n X_i.
+            \]
+        \end{itemize}
+
+      \item \textbf{Exponential($\lambda$):}
+        \begin{itemize}
+          \item $\mathbb{E}[X] = \frac{1}{\lambda}$.
+          \item Method of Moments Estimator:
+            \[
+              \hat{\lambda} = \frac{1}{M_1} = \frac{n}{\sum_{i=1}^n X_i}.
+            \]
+        \end{itemize}
+
+      \item \textbf{Normal($\mu, \sigma^2$):}
+        \begin{itemize}
+          \item $\mathbb{E}[X] = \mu$, $\mathbb{E}[X^2] = \sigma^2 + \mu^2$.
+          \item Method of Moments Estimators:
+            \[
+              \hat{\mu} = M_1, \quad \hat{\sigma}^2 = M_2 - M_1^2.
+            \]
+        \end{itemize}
+
+      \item \textbf{Gamma($\alpha, \beta$):}
+        \begin{itemize}
+          \item $\mathbb{E}[X] = \frac{\alpha}{\beta}$, $\mathbb{E}[X^2] = \frac{\alpha + \beta}{\beta^2}$.
+          \item Solve for $\alpha$ and $\beta$ using:
+            \[
+              M_1 = \frac{\alpha}{\beta}, \quad M_2 = \frac{\alpha + 1}{\beta^2}.
+            \]
+        \end{itemize}
+    \end{enumerate}
+
+  \item \textbf{Practical Applications:}
+    \begin{itemize}
+      \item Bernoulli($p$): Compute success probabilities using observed outcomes.
+      \item Poisson($\lambda$): Estimate the average rate of events (e.g., radioactive decay).
+      \item Normal($\mu, \sigma^2$): Analyze measurement errors or natural variability.
+      \item Gamma($\alpha, \beta$): Model waiting times or continuous quantities.
+    \end{itemize}
+\end{itemize}
+
+\section*{Simplified Explanation}
+
+\textbf{Key Idea:}
+The Method of Moments estimates parameters by equating sample moments to their theoretical counterparts.
+
+\textbf{Steps:}
+1. Compute sample moments from data.
+2. Solve equations relating moments to parameters.
+3. Replace theoretical moments with sample moments to estimate parameters.
+
+\textbf{Examples:}
+- For Bernoulli($p$), $\hat{p} = \text{sample mean}$.
+- For Exponential($\lambda$), $\hat{\lambda} = \frac{1}{\text{sample mean}}$.
+
+\section*{Conclusion}
+
+In this lecture, we:
+\begin{itemize}
+  \item Introduced the Method of Moments for parameter estimation.
+  \item Demonstrated examples across various distributions.
+  \item Highlighted the method's simplicity and wide applicability.
+\end{itemize}
+
+The Method of Moments provides an intuitive starting point for parameter estimation, bridging sample data with theoretical models.
+
+\end{document}
